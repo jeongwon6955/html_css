@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#wrap {
+    width: 100%;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 90px;
+    padding: 0 48px;
+    align-items: center;
+}
+img {
+    width: 165px;
+    height: 42px;
+}
+.menu {
+    display: flex;
+    height: 90px;
+}
+.menu > li {
+    position: relative;
+}
+.menu > li > a {
+    display: block;
+    height: 90px;
+    padding: 0 32px;
+    line-height: 90px;
+    font-weight: bold;
+    font-size: 15px;
+}
+.menu > li > a:hover {
+    color: rgb(255, 91, 32);
+}
+.submenu {
+    width: 100%;
+    height: 250px;
+    position: absolute;
+    height: 0;
+    overflow: hidden;
+    background-color: white;
+    z-index: 1;
+    transition: 0.3s ease-out;
+}
+.submenu > li {
+    padding: 20px 0 0;
+}
+.submenu > li > a {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    font-size: 13px;
+    height: 39px;
+}
+.submenu > li > a:hover {
+    color: rgb(255, 91, 32);
+    font-weight: bold;
+}
+.box {
+    position: absolute;
+    width: 100%;
+    top: 90px;
+    left: 0;
+    height: 0;
+    background-color: white;
+    transition: 0.3s ease-out;
+}
+.header:hover .menu > li > a {
+    padding: 0 48px;
+    transition: 0.3s ease-out; 
+}
+.header:hover .submenu {
+    height: 250px;
+}
+.header:hover .box {
+    height: 250px;
+}
+.user {
+    display: flex;
+    width: 225px;
+    height: 39px;
+    justify-content: space-between;
+}
+.box1 {
+    display: flex;
+    width: 97px;
+    height: 39px;
+    background-color: rgb(255, 91, 32);
+    border-radius: 30px;
+}
+.box1 p {
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    display: block;
+    margin: 0 auto;
+}
+p {
+    font-size: 30px;
+    line-height: 39px;
+}
+.slider {
+    width: 100%;
+    height: 100vh;
+    background-color: gray;
+}
