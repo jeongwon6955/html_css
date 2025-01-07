@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>megacoffee</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .wrap {
+            width: 100%;
+        }
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        .header {
+            display: flex;
+            justify-content: center;
+            background-color: lightcoral;
+            align-items: center;
+            height: 105px;
+            width: 100%;
+        }
+        .header:hover {
+            background-color: white;
+        }
+        .header > img {
+            margin-right: 100px;
+        }
+        .menu {
+            display: flex;
+        }
+        .menu > li {
+            width: 113px;
+            height: 105px;
+            line-height: 105px;
+            text-align: center;
+            position: relative;
+        }
+        .menu > li > a {
+            font-weight: bold;
+        }
+        .submenu {
+            position: absolute;
+            width: 100%;
+            height: 0px;
+            background-color: white;
+            overflow: hidden;
+            transition: all 400ms;
+        }
+        .submenu > li {
+            width: 113px;
+            height: 30px;
+        }
+        .submenu > li > a {
+            font-size: 14px;
+        }
+        .box {
+            position: absolute;
+            top: 105px;
+            left: 0;
+            height: 0px;
+            width: 100%;
+            background-color: white;
+            transition: all 400ms;
+        }
+        .menu:hover .submenu {
+            height: 200px;
+        }
+        .header:hover ~ .box {
+            height: 500px;
+        }
+        .user {
+            display: flex;
+            margin-left: 100px;
+        }
+        .user > li {
+            padding: 0 7px;
+        }
+        .user > li > img {
+            display: flex;
+            align-items: center;
+            border: 2px solid black;
+            border-radius: 40px;
+            padding: 3px;
+        }
+        .user > li > img:hover {
+            background-color: rgb(255, 217, 1);
+            border: 2px solid rgb(255, 217, 1);
+        }
+        .slider {
+            width: 100%;
+            height: 500px;
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+
+        <div class="header">
+            <img src="https://img.79plus.co.kr/megahp/common/img/logo_b.png" style="width: 200px; height: 40px;" alt="메가커피">
+            <ul class="menu">
+                <li>
+                    <a href="#">메가 스토리</a>
+                    <ul class="submenu">
+                        <li><a href="#">브랜드</a></li>
+                        <li><a href="#">BI</a></li>
+                        <li><a href="#">오시는 길</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">메뉴소개</a>
+                    <ul class="submenu">
+                        <li><a href="#">음료</a></li>
+                        <li><a href="#">푸드</a></li>
+                        <li><a href="#">상품</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">매장</a>
+                    <ul class="submenu">
+                        <li><a href="#">매장찾기</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">창업안내</a>
+                    <ul class="submenu">
+                        <li><a href="#">개설비용</a></li>
+                        <li><a href="#">인테리어</a></li>
+                        <li><a href="#">창업문의</a></li>
+                        <li><a href="#">가맹점 인수</a></li>
+                        <li><a href="#">창업뉴스</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">메가소식</a>
+                    <ul class="submenu">
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">이벤트</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">고객의 소리</a></li>
+                    </ul>
+                </li>
+                <li>   
+                    <a href="#">채용</a>
+                    <ul class="submenu">
+                        <li><a href="#">채용안내</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="user">
+                <li> 
+                    <img src="https://img.79plus.co.kr/megahp/common/img/sns/sns_blog.png" alt="blog"> 
+                </li>   
+                <li>
+                    <img src="https://img.79plus.co.kr/megahp/common/img/sns/sns_facebook.png" alt="facebook">
+                </li>
+                <li>
+                    <img src="https://img.79plus.co.kr/megahp/common/img/sns/sns_instagram.png" alt="instagram">
+                </li>
+                <li>
+                    <img src="https://img.79plus.co.kr/megahp/common/img/sns/sns_smartstore.png" alt="smartstore">
+                </li>
+            </ul>
+            <div class="box"></div>
+        </div>
+        <div class="slider"></div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nav</title>
+    <style>
+        nav ul {
+            width: 100%;
+            background-color: lightblue;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        nav ul li {
+            display: inline-block;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-menu {
+            color: black;
+            padding: 16px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .dropdown-content {
+            position: absolute;
+            box-shadow: 0px 10px 10px 2px black;
+            min-width: 160px;
+            display: none;
+        }
+        .dropdown-content a{
+            color: black;
+            padding: 16px 12px;
+            display: block;
+            text-decoration: none;
+        }
+        .dropdown-menu:hover{
+            color: white;
+            background-color: blue;
+        }
+        .dropdown:hover .dropdown-content{
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f3f3f3;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="dropdown">
+                <div class="dropdown-menu">메뉴1</div>
+                <div class="dropdown-content">
+                    <a href="#">메뉴1-1</a>
+                    <a href="#">메뉴1-2</a>
+                    <a href="#">메뉴1-3</a>
+                    <a href="#">메뉴1-4</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <div class="dropdown-menu">메뉴2</div>
+                <div class="dropdown-content">
+                    <a href="#">메뉴2-1</a>
+                    <a href="#">메뉴2-2</a>
+                    <a href="#">메뉴2-3</a>
+                    <a href="#">메뉴2-4</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <div class="dropdown-menu">메뉴3</div>
+                <div class="dropdown-content">
+                    <a href="#">메뉴3-1</a>
+                    <a href="#">메뉴3-2</a>
+                    <a href="#">메뉴3-3</a>
+                    <a href="#">메뉴3-4</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <div class="dropdown-menu">메뉴4</div>
+                <div class="dropdown-content">
+                    <a href="#">메뉴4-1</a>
+                    <a href="#">메뉴4-2</a>
+                    <a href="#">메뉴4-3</a>
+                    <a href="#">메뉴4-4</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>
