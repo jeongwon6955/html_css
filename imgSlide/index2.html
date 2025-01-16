@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>imgslide</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
+        }
+        ul {
+            list-style: none;
         }
         .box {
             width: 100%;
@@ -18,32 +21,32 @@
             width: 400%;
             height: 300px;
             display: flex;
-            animation: slide infinite linear 6s;
+            animation: slide infinite linear 9s;
         }
         .slide div {
             width: 100%;
             height: 300px;
         }
         @keyframes slide {
-            0%{
+            0% {
                 transform: translateX(0);
             }
-            23%{ 
+            23% {
                 transform: translateX(0);
             }
-            33%{
+            33% {
                 transform: translateX(-1920px);
             }
-            56%{
+            56% {
                 transform: translateX(-1920px);
             }
-            66%{
+            66% {
                 transform: translateX(-3840px);
             }
-            90%{
+            90% {
                 transform: translateX(-3840px);
             }
-            100%{
+            100% {
                 transform: translateX(-5760px);
             }
         }

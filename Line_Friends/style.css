@@ -196,7 +196,70 @@ a {
     height: 330px;
     padding: 33px 0 53px;
 }
+.box6 {
+    width: 100%;
+    height: 890px;
+    overflow: hidden;
+}
+.slider {
+    width: 400%;
+    height: 890px;
+    display: flex;
+    animation: slide infinite linear 6s;
+}
 .slider img {
     width: 100%;
-    height: 770px;
+    height: 890px;
+    padding-bottom: 120px;
+}
+@keyframes slider {
+    0% {
+        transform: translateX(0);
+    }
+    23% {
+        transform: translateX(0);
+    }
+    33% {
+        transform: translateX(-1680px);
+    }
+    56% {
+        transform: translateX(-1680px);
+    }
+    66% {
+        transform: translateX(-3360px);
+    }
+    90% {
+        transform: translateX(-3360px);
+    }
+    100% {
+        transform: translateX(-5040px);
+    }
+}
+.box7 {
+    width: 100%;
+    height: 700px;
+    padding: 0 0 100px;
+}
+.box7-1 {
+    margin: auto;
+    width: 1200px;
+    height: 30px;
+    padding: 0 16px;
+}
+h2 {
+    font-size: 26px;
+    width: 100%;
+    margin: 0 0 24px;
+}
+.box7-2 {
+    width: 1200px;
+    height: 490px;
+    margin: auto;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+}
+.box7-2 img {
+    width: 380px;
+    height: 380px;
 }
