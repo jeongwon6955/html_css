@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+.slide {
+    width: 100%;
+    height: 700px;
+    background-color: lightcoral;
+}
+.box {
+    margin: 0 auto;
+    width: 400px;
+    height: 400px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px  gray;
+}
+.tap {
+    max-width: 400px;
+    height: 100%;
+}
+.tap ul {
+    position: relative;
+    display: flex;
+}
+.tap ul li {
+    display: inline-block;
+    width: 105px;
+    background-color: #ffffff;
+}
+.tap label {
+    display: block;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid blueviolet;
+    color: blueviolet;
+}
+.tap input {
+    display: none;
+}
+.tapcon {
+    display: none;
+    width: 340px;
+    text-align: center;
+    position: absolute;
+    left: 25px;
+    top: 55px;
+    background-color: #efe4fa;
+    height: 280px;
+    border-radius: 10px;
+    color: gray;
+    font-size: 30px;
+}
+.tap input:checked ~ label {
+    background-color: blueviolet;
+    color: white;
+}
+.tap input:checked ~ .tapcon {
+    display: block;
+}
