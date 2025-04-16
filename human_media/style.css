@@ -56,11 +56,12 @@ nav {
     line-height: 32px;
     margin: 0 0 0 30px;
     padding: 0 10px;
-    border: 1px solid white;
+    border: 1px solid green;
     font-size: 15px;
     color: white;
     border-radius: 20px;
     font-weight: bold;
+    background-color: green;
 }
 .box1 {
     width: 100%;
@@ -157,4 +158,116 @@ button {
 .imgbox2 {
     display: flex;
     width: 100%;
+}
+.box3-2 {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.map {
+    width: 100%;
+    height: 550px;
+    display: flex;
+    justify-content: space-between;
+}
+.number {
+    width: 500px;
+    padding: 30px 0;
+    height: 60px;
+    border-bottom: 1px solid lightgray;
+}
+.hours {
+    width: 500px;
+    padding: 30px 0;
+    height: 100px;
+    border-bottom: 1px solid lightgray;
+}
+.address {
+    width: 500px;
+    height: 80px;
+    padding: 30px 0;
+    border-bottom: 1px solid lightgray;
+}
+.sns {
+    width: 520px;
+    height: 50px;
+    padding: 30px 0;
+    display: flex;
+}
+.sns > a {
+    width: 40px;
+    height: 100%;
+    padding: 0 10px;
+}
+.inner {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer {
+    width: 100%;
+    height: 270px;
+    padding: 50px 0;
+    background-color: #272727;
+}
+.footer-wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer2 {
+    width: 800px;
+    height: 100%;
+}
+.footer2-1 {
+    width: 100%;
+    margin: 0 0 15px;
+}
+.footer2-1 > a {
+    color: #5AA933;
+    margin-right: 5px;
+    font-size: 17px;
+}
+.footer2-2 {
+    width: 100%;
+    margin: 0 0 40px;
+}
+.footer2-2 > a {
+    margin-right: 5px;
+    color: gray;
+    font-size: 19px;
+}
+.footer3 {
+    width: 350px;
+    height: 100%;
+}
+.footer2-3 > p {
+    font-size: 17px;
+    color: #EEEEEE;
+    width: 100%;
+    margin: 0 0 5px;
+}
+.footer2-3 > p > span {
+    font-size: 17px;
+    color: #FFFFFF80;
+}
+.footer2-3 > p > a {
+    font-size: 19px;
+    color: #5AA933;
+    font-weight: bold;
+}
+.footer2-3 {
+    width: 100%;
+    margin: 0 0 40px;
+}
+.text {
+    font-size: 15px;
+    color: #FFFFFF80;
+    margin: 0 5px 0 0;
 }
