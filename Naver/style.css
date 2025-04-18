@@ -78,17 +78,21 @@ a {
     z-index: -1;
     overflow: hidden;
     transition: ease-in-out 0.1s;
+    background-color: #f3f3f3;
 }
 .menu > li:hover .submenu {
     height: 450px;
 }
-nav:hover ~ .box {
+nav:hover .box, .box:hover {
     height: 450px;
 }
 .menu > li > a:hover {
     color: #FF5F00;
 }
 .submenu > li > a:hover {
+    text-decoration: underline;
+}
+.subbox > li > a:hover {
     text-decoration: underline;
 }
 .user > strong:hover {
