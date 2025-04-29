@@ -113,7 +113,7 @@ nav:hover .box, .box:hover {
     display: flex;
 }
 .title {
-    width: 300px;
+    width: 320px;
     height: 100%;
 }
 .title1{
@@ -237,4 +237,45 @@ nav:hover .box, .box:hover {
 .text_wrap {
     width: 100%;
     margin-top: 40px;
+}
+.text_box:hover strong {
+    color: #FF5F00;
+}
+.text_box:hover .head1 {
+    color: #FF5F00;
+}
+.box2-1:hover {
+    background-color: #FF5F00;
+}
+.box1-2:hover {
+    color: #FF5F00;
+}
+.content {
+    width: 340px;
+    height: 100%;
+    margin-right: 20px;
+}
+.banner {
+    width: 100%;
+    height: 320px;
+}
+.text_box1 {
+    width: 300px;
+    height: 274px;
+    padding: 26px 20px 20px;
+}
+.title_wrap {
+    width: 100%;
+    height: 100px;
+}
+.tag {
+    width: 100%;
+    color: white;
+    font-size: 15px;
+}
+.desc {
+    width: 100%;
+    margin: 130PX 0 0;
+    color: white;
+    font-size: 15px;
 }
