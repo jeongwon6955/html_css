@@ -21,7 +21,7 @@ ul {
     text-align: center;
     background-color: #f9f9f9;  
     line-height: 40px;
-    float: left;
+    display: flex;
 }
 .tabmenu label {
     display: block;
