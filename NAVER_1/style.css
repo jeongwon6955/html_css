@@ -16,6 +16,7 @@ a {
     display: flex;
     justify-content: space-between;
     padding-inline: 150px;
+    z-index: 2;
 }
 .link {
     position: relative;
@@ -31,7 +32,10 @@ a {
     font-size: 35px;    
     display: flex;
 }
-input {
+.link > input {
+    display: none;
+}
+.link1 > input {
     display: none;
 }
 .hover {
@@ -81,6 +85,7 @@ input {
     font-size: 18px;
     text-align: center;
     line-height: 45px;
+    z-index: 2;
 }
 .ballon::after {
     border-top: 0 solid transparent;
@@ -98,29 +103,48 @@ input {
 }
 .tapmenu {
     width: 420px;
-    height: 1000px;
+    height: 500px;
     box-shadow: 0px 0px 15px 1px #a9a9a9;
     position: absolute;
     top: 70px;
     display: none;
     border-radius: 10px;
     left: -10px;
+    overflow: scroll;
+    background-color: white;
+    z-index: 1;
 }
-.tapmenu::after {
+.tapmenu1 {
     border-top: 0 solid transparent;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-bottom: 15px solid #ffff;
+    border-bottom: 15px solid #ffffff;
     content: "";
     position: absolute;
-    top: -15px;
-    left: 28px;
+    top: 55px;
+    left: 17px;
+    display: none;
+    z-index: 1;
 }
-#tap ~ .tapmenu::after {
-    left: 315px;
+.title {
+    width: 100%;
+    padding-inline: 20px;
+    height: 80px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e7e8e7;
 }
-#tap2 ~ .tapmenu::after {
-    left: 345px;
+.user {
+    height: 500px;
+    width: 100%;
+    background-color: #19ec02;
+}
+input:checked + label + .tapmenu + .tapmenu1 {
+    display: block;
+}
+#tap2 ~ .tapmenu1 {
+    left: 88px;
 }
 #hover:hover + label,
 #hover2:hover + label,
@@ -144,4 +168,109 @@ input {
 }
 input:checked + label + .tapmenu {
     display: block;
+}
+.search {
+    width: 1620px;
+    height: 200px;
+    margin: 0 auto;
+    position: relative;
+}
+.searchbox {
+    width: 900px;
+    height: 85px;
+    margin: 0 auto;
+    border: 1px solid #19ec02;
+    border-radius: 40px;
+    display: flex;
+}
+.logo {
+    width: 100px;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 30px;
+}
+.logo > img {
+    width: 35px;
+    height: 35px;
+}
+.field {
+    width: 800px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    color: #c5c3c3;
+}
+.keyboard:hover {
+    color: #a9a9a9;
+}
+.keyboard:hover ~ .ballon_box4 > .ballon {
+    top: 70px;
+    left: 1085px;
+    display: block;
+    border-radius: 5px;
+    background-color: #19ec02;
+    color: white;
+    width: 80px;
+    height: 35px;
+    font-size: 14px;
+    line-height: 35px;
+    z-index: 1;
+}
+.keyboard:hover ~ .ballon_box4 > .ballon::after {
+    left: 33px;
+    top: -6px;
+    border-bottom: 7px solid #19ec02;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+}
+.search-btn {
+    color: #19ec02;
+    padding-left: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+#search {
+    display: none;
+}
+.t-btn {
+    padding-left: 20px;
+    font-size: 18px;
+    color: #a9a9a9;
+}
+.t-btn > span:nth-child(1) {
+    display: none;
+}
+input:checked + label > span:nth-child(2) {
+    display: none;
+}
+input:checked + label > span:nth-child(1) {
+    display: block;
+}
+.sub {
+    position: absolute;
+    width: 900px;
+    height: 40px;
+    background-color: white;
+    border-top: 5px solid #eae9e9;
+    top: 85px;
+    left: 365px;
+    display: none;
+    box-shadow: 2px 2px 3px 0px #a9a9a9;
+}
+input:checked + label + .sub {
+    display: block;
+}
+.field > input {
+    width: 650px;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 30px;
+    font-weight: bold;
+}
+.searchbox:hover {
+    box-shadow: 2px 2px 3px 0px #a9a9a9;
 }
