@@ -5,10 +5,10 @@
 }
 li {
     list-style-type: none;
-    text-decoration: none;
 }
 a {
     color: black;
+    text-decoration: none;
 }
 .header {
     width: 100%;
@@ -85,7 +85,7 @@ a {
     font-size: 18px;
     text-align: center;
     line-height: 45px;
-    z-index: 2;
+    z-index: 4;
 }
 .ballon::after {
     border-top: 0 solid transparent;
@@ -102,7 +102,7 @@ a {
     left: 23px;
 }
 .tapmenu {
-    width: 420px;
+    width: 500px;
     height: 500px;
     box-shadow: 0px 0px 15px 1px #a9a9a9;
     position: absolute;
@@ -112,7 +112,7 @@ a {
     left: -10px;
     overflow: scroll;
     background-color: white;
-    z-index: 1;
+    z-index: 3;
 }
 .tapmenu1 {
     border-top: 0 solid transparent;
@@ -144,7 +144,7 @@ input:checked + label + .tapmenu + .tapmenu1 {
     display: block;
 }
 #tap2 ~ .tapmenu1 {
-    left: 88px;
+    left: 85px;
 }
 #hover:hover + label,
 #hover2:hover + label,
@@ -217,7 +217,6 @@ input:checked + label + .tapmenu {
     height: 35px;
     font-size: 14px;
     line-height: 35px;
-    z-index: 1;
 }
 .keyboard:hover ~ .ballon_box4 > .ballon::after {
     left: 33px;
@@ -251,17 +250,29 @@ input:checked + label > span:nth-child(1) {
 }
 .sub {
     position: absolute;
-    width: 900px;
-    height: 40px;
+    width: 870px;
+    height: 50px;
     background-color: white;
-    border-top: 5px solid #eae9e9;
-    top: 85px;
-    left: 365px;
+    border-left: 1px solid #19ec02;
+    border-right: 1px solid #19ec02;
+    border-bottom: 1px solid #19ec02;
+    top: 78px;
+    left: 375px;
     display: none;
     box-shadow: 2px 2px 3px 0px #a9a9a9;
+    border-radius: 10px;
+    padding-inline: 30px;
+    font-size: 19px;
+    color: gray;
+    z-index: 3;
+}
+.sub1 {
+    display: flex;
 }
 input:checked + label + .sub {
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .field > input {
     width: 650px;
@@ -273,4 +284,84 @@ input:checked + label + .sub {
 }
 .searchbox:hover {
     box-shadow: 2px 2px 3px 0px #a9a9a9;
+}
+.linkbox {
+    display: flex;
+    width: 900px;
+    height: 100px;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    padding-inline: 30px;
+}
+.linkbox > a {
+    width: 70px;
+    height: 80px;
+    z-index: 2;
+}
+.linkbox > a > img {
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    box-shadow: 0px 1px 1px 1px #dddcdc;
+    background-color: #ffffff;
+}
+.linkbox > a > p {
+    width: 100%;
+    height: 30px;
+    font-size: 17px;
+}
+.linkbox > a:hover img {
+    box-shadow: 0px 3px 4px 1px #dddcdc;
+}
+.linkbox > ul > input {
+    display: none;
+}
+.linkbox > ul {
+    width: 70px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+}
+.linkbox > ul > label {
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    box-shadow: 0px 1px 1px 1px #dddcdc;
+    text-align: center;
+    line-height: 50px;
+    font-size: 19px;
+    color: #a9a9a9;
+    background-color: #ffffff;
+    z-index: 2;
+}
+.linkbox > ul > label:hover {
+    box-shadow: 0px 3px 4px 1px #dddcdc;
+    background-color: #fbfbfb;
+    color: black;
+}
+.linkbox > ul > label > i:nth-child(2) {
+    display: none;
+}
+.linkbox > ul > input:checked + label > i:nth-child(1) {
+    display: none;
+}
+.linkbox > ul > input:checked + label > i:nth-child(2) {
+    display: block;
+    line-height: 50px;
+}
+.link-sub-box {
+    width: 900px;
+    height: 400px;
+    position: absolute;
+    top: 75px;
+    left: 360px;
+    z-index: 1;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 1px 4px 1px #a9a9a9;
+    display: none;
+}
+.linkbox > ul > input:checked + label + .link-sub-box {
+    display: block;
 }
