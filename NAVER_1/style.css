@@ -103,7 +103,7 @@ a {
 }
 .tapmenu {
     width: 540px;
-    height: 800px;
+    height: 750px;
     box-shadow: 0px 0px 15px 1px #a9a9a9;
     position: absolute;
     top: 70px;
@@ -140,7 +140,7 @@ a {
     z-index: 1;
 }
 .user {
-    height: 1000px;
+    height: 850px;
     width: 100%;
     background-color: #ffffff;
     margin-top: 80px;
@@ -261,7 +261,7 @@ a {
     height: 100%;
 }
 .service-icon1-1 {
-    width: 100px;
+    width: 200px;
     display: flex;
     font-size: 18px;
     align-items: center;
