@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'GongGothicMedium';
+}
+
+/* font */
+
+@font-face {
+    font-family: 'GongGothicMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #00204C;
+    text-decoration: none;
+    font-weight: lighter;
+}
+
+body {
+    background-color: #e7edfb;
+    width: 100%;
+    height: 100vh;
+    color: #00204C;
+}
+
+.header {
+    max-width: 100%;
+    height: 145px;
+    display: grid;
+    grid-template-columns: 33% 67%;
+}
+
+.header-box {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    width: 215px;
+    height: 65px;
+    position: absolute;
+    left: 60px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    box-shadow: 7px 10px 15px -5px #d0bde5;
+    font-weight: bold;
+}
+
+.logo > img {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+}
+
+.menu {
+    width: 613px;
+    height: 60px;
+    display: flex;
+    position: absolute;
+    right: 40px;
+    justify-content: right;
+}
+
+.menu > li {
+    padding-inline: 5px;
+    height: 100%;
+    position: relative;
+}
+
+.menu > li > a {
+    padding-inline: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu > li > .sub-text:hover,
+.submenu > li > a:hover {
+    color: #A700FA;
+}
+
+.submenu {
+    width: 110px;
+    background-color: white;
+    border-radius: 10px;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease-out;
+}
+
+.submenu > li {
+    padding-inline: 5px;
+    height: 29px;
+}
+
+.submenu > li > a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.sub-menu:hover  .submenu {
+    opacity: 1;
+    visibility: visible;
+}
