@@ -102,7 +102,7 @@ body {
     right: 0;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.2s ease-out;
+    transition: all 0.4s ease-out;
 }
 
 .submenu > li {
@@ -120,5 +120,138 @@ body {
 
 .sub-menu:hover  .submenu {
     opacity: 1;
+    visibility: visible;
+}
+
+.toggle-btn {
+    display: none;
+}
+
+@media screen and (max-width: 300px) {
+    .header > .header-box:nth-child(2) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 300px;
+        height: 0;
+        background-color: #00204C;
+        visibility: hidden;
+    }
+
+    .menu {
+        width: 300px;
+        display: inline-block;
+        top: 70px;
+        left: 0;
+    }
+
+    a {
+        color: white;
+    }
+
+    .menu > li {
+        width: 300px;
+        display: inline-block;
+    }
+
+    .submenu {
+        opacity: 1;
+        visibility: visible;
+        position: static;
+        background: transparent;
+        display: none;
+    }
+
+    .submenu > li > a {
+        justify-content: left;
+        font-size: 12px;
+    }
+
+    .show-submenu {
+        display: block;
+    }
+    
+    .header > .header-box:nth-child(1) {
+        width: 300px;
+        height: 80px;
+        display: flex;
+        justify-content: right;
+    }
+
+    .logo {
+        left: 20px;
+        width: 175px;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .logo > img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .toggle-btn {
+        display: flex;
+        position: absolute;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        box-shadow: 7px 10px 15px -5px #d0bde5;
+        border-radius: 15px;
+        align-items: center;
+        justify-content: center;
+        z-index: 3;
+    }
+
+    .bar1 {
+        position: absolute;
+        top: 6px;
+        left: 10px;
+        font-size: 20px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .bar2 {
+        font-size: 28px;
+        position: absolute;
+        top: 10px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .bar3 {
+        position: absolute;
+        bottom: 4px;
+        right: 10px;
+        font-size: 20px;
+        transition: all 0.3s ease-in-out;
+    }
+
+
+}
+
+.show-bar1 {
+    transform: rotate(230deg);
+    font-size: 15px;
+    top: 10px;
+    left: 13px;
+    color: white;
+}
+
+.show-bar2 {
+    transform: rotate(-50deg);
+    color: white;
+}
+
+.show-bar3 {
+    transform: rotate(-130deg);
+    bottom: 13px;
+    right: 16px;
+    font-size: 15px;
+    color: white;
+}
+
+.show .header > .header-box:nth-child(2){
+    height: 100%;
     visibility: visible;
 }

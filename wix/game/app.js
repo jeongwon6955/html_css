@@ -1,0 +1,16 @@
+const btn = document.querySelector('.toggle-btn')
+const rotate = document.querySelector('.bar1')
+const rotate1 = document.querySelector('.bar2')
+const rotate2 = document.querySelector('.bar3')
+const submenu = document.querySelector('.submenu')
+const header = document.querySelector('.header > .header-box:nth-child(2)')
+// console.log(header)
+// console.log(rotate)
+
+btn.addEventListener('click', function() {
+    // console.log('hello')
+    rotate.classList.toggle('show-bar1')
+    rotate1.classList.toggle('show-bar2')
+    rotate2.classList.toggle('show-bar3')
+    header.classList.toggle('show')
+})
