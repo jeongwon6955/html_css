@@ -1,6 +1,17 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Pretendard-Regular';
+}
+
+/* font */
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
 }
 
 body {
@@ -22,7 +33,85 @@ body {
     background-color: black;
     position: absolute;
     top: 0;
-    opacity: 0.6;
+    opacity: 0.4;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.nav {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: right;
+}
+
+.menu {
+    display: flex;
+    width: 600px;
+    height: 60px;
+    margin: 30px;
+    /* border-radius: 500px; */
+    justify-content: space-between;
+    border: 2px solid #12f5c3;
+    position: relative;
+    z-index: 2;
+}
+
+.nav-before {
+    width: 600px;
+    opacity: 0.4;
+    height: 60px;
+    background-color: black;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 1;
+}
+
+.login {
+    background-color: #12f5c3;
+}
+
+.menu-text:hover {
+    background-color: white;
+}
+
+.menu-text:hover a{
+    color: black; 
+}
+
+.login:hover {
+    background-color: black;
+}
+
+.login:hover a {
+    color: #12f5c3;
+}
+
+.menu > li {
+    width: 125px;
+    display: flex;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.menu > li > a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-inline: 5px;
+    font-size: 13px;
+    color: white    ;
 }
 
 .slides {
