@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2ff1512d45.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
     <title>Document</title>
 </head>
 <body>
@@ -11,7 +13,7 @@
         <div class="nav-before"></div>
         <div class="nav">
             <ul class="menu">
-                <li class="menu-text"><a href="#">보이스피싱이란?</a></li>
+                <li class="menu-text" id="scroll1"><a href="#">보이스피싱이란?</a></li>
                 <li class="menu-text"><a href="#">보이스피싱 사례</a></li>
                 <li class="menu-text"><a href="#">보이스피싱 통계</a></li>
                 <li class="menu-text"><a href="#">보이스피싱 신고</a></li>
@@ -41,6 +43,61 @@
                 </div>
             </div>
         </div>
+        <div class="slides-textbox">
+            <div class="slides-text">
+                <div class="slide-text"> 
+                    의심하고, 확인하고, 지키자 내 돈! <br>
+                    <span class="subtext">모르는 번호, 금융 얘기? 먼저 의심부터 하세요.</span>
+                </div>
+                <div class="slide-text1">
+                    모르면 끊고, 알면 막는다! <br>
+                    <span class="subtext">의심스러운 전화는 바로 끊는 게 가장 안전한 선택입니다.</span>
+                </div>
+                <div class="slide-text2">
+                    그 전화, 사랑도 돈도 훔쳐갑니다! <br>
+                    <span class="subtext">가족을 사칭한 전화, 감정과 지갑을 동시에 노립니다.</span>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <!-- style.css -->
+    <!-- header -->
+
+    <section class="main">
+        <h1>보이스피싱이란?</h1>
+        <div class="itd">
+            <div class="itd-text">
+                <div>
+                    <div class="strongbar"></div>
+                    <div class="itd-title">
+                        <strong>보이스피싱(Voice Phishing)</strong>
+                    </div>
+                    <div class="itd-title-text">
+                        <span>
+                            보이스피싱은 
+                            ‘음성(Voice)’과 ‘개인정보 낚시(Phishing)’의 합성어로, <br>
+                            <br>
+                            전화나 문자 메시지를 이용해 사람을 속이고 <br>
+                            <br>
+                            금융정보나 개인정보를 빼내 금전적인 피해를 입히는 범죄입니다. <br>
+                            <br> 
+                            주로 수사기관 사칭, 금융기관 위장, 대출 빙자 등의 수법을 사용합니다.
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="itd-img">
+                <img src="../img/4.png" alt="">
+            </div>
+        </div>
+        <div class="top-scroll">
+            <i class="fa-solid fa-arrow-up"></i>
+        </div>
+    </section>
+
+    <!-- script -->
+
+    <script src="app.js"></script>
 </body>
 </html>
