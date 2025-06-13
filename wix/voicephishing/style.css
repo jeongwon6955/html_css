@@ -216,7 +216,7 @@ a {
 }
 
 .top-scroll {
-    position: sticky;
+    position: fixed;
     bottom: 30px;
     left: 1440px;
     width: 50px;
