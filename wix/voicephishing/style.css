@@ -230,6 +230,7 @@ a {
     font-size: 30px;
     color: white;
     animation: bouns 3s infinite;
+    cursor: pointer;
 }
 
 @keyframes slide {
