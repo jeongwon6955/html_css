@@ -1,11 +1,21 @@
 const btn = document.querySelector('#scroll1')
+const btn1 = document.querySelector('#scroll2')
 // console.log('btn')
 btn.addEventListener('click', function() {
-    const target = document.querySelector('.main')
+    const target = document.querySelector('#main1')
 
     target.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
+    })
+})
+
+btn1.addEventListener('click', function() {
+    const target = document.querySelector('#main2')
+
+    target.scrollIntoView({
+        behavior: 'smooth',
+        black: 'start'
     })
 })
 
@@ -29,15 +39,30 @@ const next = document.querySelector('.next');
 let currenttarget = 0;
 
 function slideshow(){
-    slide.style.transform = `translateX(-${currenttarget * 450}px)`
+    slide.style.transform = `translateX(-${currenttarget * 445}px)`
 };
 
+
 next.addEventListener('click', function() {
-    currenttarget++
+    if(currenttarget < 2) {
+        currenttarget++
+    }
+    if(currenttarget === 2) {
+        next.style.visibility = 'hidden'
+    }
+    prev.style.visibility = 'visible'
     slideshow();
 });
 
 prev.addEventListener('click', function() {
     currenttarget--
+    if(currenttarget === 0) {
+      prev.style.visibility = 'hidden'   
+    }
+    next.style.visibility = 'visible'
     slideshow();
 });
+
+if(currenttarget === 0) {
+    prev.style.visibility = 'hidden'
+}
