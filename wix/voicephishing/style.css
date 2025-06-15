@@ -55,6 +55,11 @@ a {
     justify-content: right;
 }
 
+.logo {
+    width: 100px;
+    z-index: 1;
+}
+
 .menu {
     display: flex;
     width: 600px;
