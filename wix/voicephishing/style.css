@@ -90,6 +90,12 @@ a {
     background-color: #12f5c3;
 }
 
+.login > a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .menu-text:hover {
     background-color: white;
 }
