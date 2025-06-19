@@ -31,6 +31,7 @@ a {
 .header-box {
     width: 100%;
     height: 800px;
+    background-color: skyblue;
 }
 
 .header {
@@ -40,6 +41,12 @@ a {
     grid-template-columns: repeat(2, 1fr);
     border-bottom: 1px solid black;
     background-color: transparent;
+    position: fixed;
+    transition: all 0.3s ease-in-out;
+}
+
+.show-header {
+    background-color: white;
 }
 
 .logo {
