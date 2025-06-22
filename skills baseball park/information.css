@@ -53,6 +53,8 @@
     animation: img-slide1 5s infinite;
 }
 
+/* keyframes slide */
+
 @keyframes img-slide {
     0% {
         opacity: 1;

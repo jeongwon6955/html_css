@@ -184,6 +184,8 @@ body {
     animation: text-slide3 10s infinite;
 }
 
+/* keyframes slide */
+
 @keyframes slide {
     0% {
         left: 0;
