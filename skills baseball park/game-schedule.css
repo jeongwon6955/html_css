@@ -1,0 +1,121 @@
+.game-schedule {
+    width: 100%;
+    height: 700px;
+    padding-inline: 80px;
+    margin-top: 40px;
+    display: flex;
+}
+
+.calendar {
+    width: 70%;
+    height: 100%;
+}
+
+h1 {
+    margin-bottom: 30px ;
+}
+
+h1 > span {
+    margin-left: 10px;
+}
+
+.week {
+    width: 88%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px 0 10px; 
+    margin-bottom: 50px;
+}
+
+.calendar-design {
+    width: 100%;
+    padding-inline: 10px;
+    height: 79%;
+}
+
+.week-width-box {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    font-size: 14px;
+    position: relative;
+}
+
+.week-box {
+    width: 15%;
+    height: 100%;
+    padding: 15px 15px 15px 10px;
+    border-right: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+}
+
+.week-box:hover {
+    background-color: #efefef;
+}
+
+input {
+    display: none;
+}
+
+.open {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.close {
+    display: block;
+    width: 100%;
+    text-align: right;
+    padding: 10px;
+    color: red;
+}
+
+.modal {
+    background-color: #efefef;
+    width: 134px;
+    height: 100px;
+    position: absolute;
+    top: -100px;
+    right: -150px;
+    border-radius: 20px;
+    visibility: none;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.ballon {
+    font-size: 18px;
+    z-index: 4;
+    position: relative;
+    top: 87px;
+    left: -17px;
+    transform: rotate(30deg);
+}
+
+.ballon::after {
+    border-top: 15px solid #efefef;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 0px solid transparent;
+    content: "";
+    z-index: -1;
+}
+
+.week-box > input:checked + label ~ .modal {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: -50px;
+    font-size: 10px;
+}
+
+.today-schedule {
+    width: 30%;
+    height: 100%;
+}

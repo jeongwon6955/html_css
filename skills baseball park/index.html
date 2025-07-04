@@ -6,6 +6,7 @@
     <script src="https://kit.fontawesome.com/2ff1512d45.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="information.css">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="game-schedule.css">
     <title>skills baseball park</title>
 </head>
 <body>
@@ -75,6 +76,83 @@
     </section>
 
     <!-- information -->
+
+    <section class="game-schedule">
+        <div class="calendar">
+            <h1>2024년 <span>4월</span></h1>
+            <div class="week">
+                <span style="color: red;">일</span>
+                <span>월</span>
+                <span>화</span>
+                <span>수</span>
+                <span>목</span>
+                <span>금</span>
+                <span style="color: blue;">토</span>
+            </div>
+            <div class="calendar-design">
+                <div class="week-width-box">
+                    <div class="week-box" style="color: lightgray;">31</div>
+                    <div class="week-box">1</div>
+                    <div class="week-box">2</div>
+                    <div class="week-box">3</div>
+                    <div class="week-box">4</div>
+                    <div class="week-box">5</div>
+                    <div class="week-box" style="color: blue; border-right: none;">6</div>
+                </div>
+                <div class="week-width-box">
+                    <div class="week-box" style="color: red;">7</div>
+                    <div class="week-box">8</div>
+                    <div class="week-box">9</div>
+                    <div class="week-box">10</div>
+                    <div class="week-box">11</div>
+                    <div class="week-box">12</div>
+                    <div class="week-box" style="color: blue; border-right: none;">13</div>
+                </div>
+                <div class="week-width-box">
+                    <div class="week-box" style="color: red;">14</div>
+                    <div class="week-box">15</div>
+                    <div class="week-box">16</div>
+                    <div class="week-box">17</div>
+                    <div class="week-box">18</div>
+                    <div class="week-box">19</div>
+                    <div class="week-box" style="color: blue; border-right: none;">
+                        <input type="radio" name="today-modal" id="today">
+                        <label for="today" class="open">20</label>
+                        <div class="modal">
+                            <input type="radio" name="today-modal" id="today1">
+                            <label for="today1" class="close">
+                                <i class="fa-solid fa-xmark"></i>
+                            </label>
+                            <div class="ballon"></div>
+                            <div class="modal-box">
+                                <img src="" alt="">
+                                <p>아직 게임이 없습니다</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="week-width-box">
+                    <div class="week-box" style="color: red;">21</div>
+                    <div class="week-box">22</div>
+                    <div class="week-box">23</div>
+                    <div class="week-box">24</div>
+                    <div class="week-box">25</div>
+                    <div class="week-box">26</div>
+                    <div class="week-box" style="color: blue; border-right: none;">27</div>
+                </div>
+                <div class="week-width-box">
+                    <div class="week-box" style="color: red;">28</div>
+                    <div class="week-box">29</div>
+                    <div class="week-box">30</div>
+                    <div class="week-box" style="color: lightgray;">1</div>
+                    <div class="week-box" style="color: lightgray;">2</div>
+                    <div class="week-box" style="color: lightgray;">3</div>
+                    <div class="week-box" style="color: lightgray; border-right: none;">4</div>
+                </div>
+            </div>
+        </div>
+        <div class="today-schedule"></div>
+    </section>
 
 </body>
 </html>
