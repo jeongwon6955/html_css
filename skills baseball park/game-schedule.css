@@ -55,7 +55,7 @@
     background-color: #efefef;
 }
 
-input {
+.week-box > input {
     display: none;
 }
 
