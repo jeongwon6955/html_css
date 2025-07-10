@@ -7,20 +7,40 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="box">
-        <div class="slide-box">
-            <div class="slider">
-                <div class="slide">1</div>
-                <div class="slide">2</div>
-                <div class="slide">3</div>
-            </div>
-            <input type="radio" name="button" id="1" class="one">
-            <label for="1"> 1 </label>
-            <input type="radio" name="button" id="2" class="two">
-            <label for="2"> 2 </label>
-            <input type="radio" name="button" id="3" class="three">
-            <label for="3"> 3 </label>
-        </div>
-     </div>
+  <div class="section">
+    <input type="radio" name="slide" id="slide01" checked>
+    <input type="radio" name="slide" id="slide02">
+    <input type="radio" name="slide" id="slide03">
+    <div class="slidewrap">
+      <ul class="slidelist">
+        <li>
+          <a>
+            <label for="slide03" class="left"> < </label>
+            <div class="slider"> 1 </div>
+            <label for="slide02" class="right"> > </label>
+          </a>
+        </li>
+        <li>
+          <a>
+            <label for="slide01" class="left"> < </label>
+            <div class="slider"> 2 </div>
+            <label for="slide03" class="right"> > </label>
+          </a>
+        </li>
+        <li>
+          <a>
+            <label for="slide02" class="left"> < </label>
+            <div class="slider"> 3 </div>
+            <label for="slide01" class="right"> > </label>
+          </a>
+        </li>
+      </ul>
+      <div class="label">
+        <label for="slide01" class="slide01"></label>
+        <label for="slide02" class="slide02"></label>
+        <label for="slide03" class="slide03"></label>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
