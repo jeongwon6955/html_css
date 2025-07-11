@@ -1,20 +1,38 @@
-section input {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.section input {
   display: none;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 li {
   list-style: none;
 }
 
+
 .section .slidewrap {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 700px;
   overflow: hidden;
 }
 
 .section .slidelist {
-  white-space: nowrap;
+  width: 2100px;
   font-size: 30px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .section .slidelist > li {
@@ -31,6 +49,7 @@ li {
 
 .slider {
   width: 100%;
+  text-align: center;
 }
 
 .section .slidelist label {
@@ -49,15 +68,18 @@ li {
   right: 30px;
 }
 
-.section [id="slide01"]:checked ~ .slidewrap .slidelist > li {
-  transform: translateX(0%);
+.section [id="slide01"]:checked ~ .slidewrap .slidelist {
+  transform: translateX(0px);
+  animation: slide1 9s infinite;
 }
-.section [id="slide02"]:checked ~ .slidewrap .slidelist > li {
-  transform: translateX(-100%);
+.section [id="slide02"]:checked ~ .slidewrap .slidelist {
+  transform: translateX(-700px);
+  animation: slide2 9s infinite;
 
 }
-.section [id="slide03"]:checked ~ .slidewrap .slidelist > li {
-  transform: translateX(-200%);
+.section [id="slide03"]:checked ~ .slidewrap .slidelist {
+  transform: translateX(-1400px);
+  animation: slide3 9s infinite;
 }
 
 .label {
@@ -79,14 +101,192 @@ li {
 
 .section [id="slide01"]:checked ~ .slidewrap .label > .slide01 {
   opacity: 1;
+  animation: slide1-1 9s infinite;
+}
+
+.section [id="slide01"]:checked ~ .slidewrap .label > .slide02 {
+  opacity: 1;
+  animation: slide1-2 9s infinite;
+}
+
+.section [id="slide01"]:checked ~ .slidewrap .label > .slide03 {
+  opacity: 1;
+  animation: slide1-3 9s infinite;
+}
+
+.section [id="slide02"]:checked ~ .slidewrap .label > .slide01 {
+  opacity: 1;
+  animation: slide1-3 9s infinite;
 }
 
 .section [id="slide02"]:checked ~ .slidewrap .label > .slide02 {
   opacity: 1;
+  animation: slide1-1 9s infinite;
+}
+
+.section [id="slide02"]:checked ~ .slidewrap .label > .slide03 {
+  opacity: 1;
+  animation: slide1-2 9s infinite;
+}
+
+.section [id="slide03"]:checked ~ .slidewrap .label > .slide01 {
+  opacity: 1;
+  animation: slide1-2 9s infinite;
+}
+
+.section [id="slide03"]:checked ~ .slidewrap .label > .slide02 {
+  opacity: 1;
+  animation: slide1-3 9s infinite;
 }
 
 .section [id="slide03"]:checked ~ .slidewrap .label > .slide03 {
   opacity: 1;
+  animation: slide1-1 9s infinite;
 }
+
+@keyframes slide1 {
+  0% {
+    left: 0;
+  }
+  33% {
+    left: 0;
+  }
+  36% {
+    left: -100%;
+  }
+  66% {
+    left: -100%;
+  }
+  69% {
+    left: -200%;
+  } 
+  99% {
+    left: -200%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slide1-1 {
+  0% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+  }
+  36% {
+    opacity: 0.4;
+  }
+  66% {
+    opacity: 0.4;
+  }
+  69% {
+    opacity: 0.4;
+  } 
+  99% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide1-2 {
+  0% {
+    opacity: 0.4;
+  }
+  33% {
+    opacity: 0.4;
+  }
+  36% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 1;
+  }
+  69% {
+    opacity: 0.4;
+  } 
+  99% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes slide1-3 {
+  0% {
+    opacity: 0.4;
+  }
+  33% {
+    opacity: 0.4;
+  }
+  36% {
+    opacity: 0.4;
+  }
+  66% {
+    opacity: 0.4;
+  }
+  69% {
+    opacity: 1;
+  } 
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes slide2 {
+  0% {
+    left: 0;
+  }
+  33% {
+    left: 0;
+  }
+  36% {
+    left: -100%;
+  }
+  66% {
+    left: -100%;
+  }
+  69% {
+    left: 100%;
+  } 
+  99% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }  
+}
+
+@keyframes slide3 {
+  0% {
+    left: 0;
+  }
+  33% {
+    left: 0;
+  }
+  36% {
+    left: 200%;
+  }
+  66% {
+    left: 200%;
+  }
+  69% {
+    left: 100%;
+  } 
+  99% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }  
+}
+
 
 
