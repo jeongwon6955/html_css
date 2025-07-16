@@ -52,10 +52,11 @@
 .itd-img {
     width: 45%;
     height: 100%;
+    text-align: right;
 }
 
 .itd-img > img {
-    width: 100%;
+    width: 650px;
     height: 100%;
     object-fit: cover;
     position: relative;
@@ -67,6 +68,7 @@
     align-items: center;
     width: 100%;
     height: 100%;
+    justify-content: center;
 }
 
 .prev {
@@ -127,13 +129,13 @@
 }
 
 .case-box {
-    width: 100%;
+    width: 1200px;
     height: 70%;
     overflow: hidden;
 }
 
 .cases {
-    width: 2700px;
+    width: 2000px;
     height: 550px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -141,7 +143,7 @@
 }
 
 .case {
-    width: 70%;
+    width: 90%;
     height: 100%;
     background-color: beige;
     border-radius: 10px;

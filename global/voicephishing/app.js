@@ -39,7 +39,7 @@ const next = document.querySelector('.next');
 let currenttarget = 0;
 
 function slideshow(){
-    slide.style.transform = `translateX(-${currenttarget * 900}px)`
+    slide.style.transform = `translateX(-${currenttarget * 400}px)`
 };
 
 
