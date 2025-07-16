@@ -128,7 +128,7 @@ body {
     display: none;
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 400px) {
 
     .header-box1 {
         position: absolute;
