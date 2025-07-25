@@ -106,3 +106,169 @@
 .day1 {
     border-left: none;
 }
+
+input {
+    display: none;
+}
+
+.day > label {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-container {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    z-index: 99;
+    display: grid;
+    place-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.modal {
+    width: 500px;
+    height: 450px;
+    background-color: #eee;
+    border-radius: 20px;
+    color:black;
+    padding: 20px;
+    font-size: 30px;
+    position: relative;
+}
+
+.day > input:checked ~ .modal-container {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal > label {
+    display: grid;
+    width: 50px;
+    height: 50px;
+    place-content: center;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    right: 20px;
+}
+
+.modal > label:hover {
+    transform: scale(1.2);
+    color: red;
+}
+
+.modal-content {
+    margin-top: 50px;
+    width: 100%;
+    height: calc(100% - 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.modal-content img {
+    width: 200px;
+    height: 200px;
+}
+
+.today-game {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    margin-top: 30px;
+    padding: 0 40px;
+}
+
+.today-title {
+    width: 30%;
+    height: 100%;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.today-title h1 {
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.today-content {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 30px;
+}
+
+.today-content img {
+    width: 200px;
+    height: 200px;
+}
+
+.today-content span {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.score {
+    color: white;
+    font-size: 10px;
+    font-size: 50px;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+.res-btn {
+    width: 120px;
+    height: 50px;
+    border: 1px solid white;
+    border-radius: 60px;
+    position: relative;
+    top: 50px;
+    left: 100px;
+    overflow: hidden;
+}
+
+.res-btn::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #A14E4E;
+    z-index: -1;
+    transform-origin: left;
+    transition: .2s ease-out;
+}
+
+.res-btn:hover {
+    transition: .2s ease-out;
+    border-color: #A14E4E;
+}
+.res-btn:hover::before {
+    width: 100%;
+}
+
+.res-btn > label {
+    display: block;
+    width: 120px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.today-game > input:checked ~ .today-content > .score {
+    opacity: 1;
+}

@@ -99,6 +99,10 @@ nav > ul > li > a:hover::before {
     transform: scaleX(1);
 }
 
+nav > ul > li > a:hover {
+    color: #A14E4E;
+}
+
 /* 유저 */
 .user {
     position: absolute;
