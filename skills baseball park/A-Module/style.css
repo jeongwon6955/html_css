@@ -1,3 +1,6 @@
+@import url('info.css');
+@import url('cale.css');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,161 +9,130 @@
 
 li {
     list-style: none;
+    padding-left: 0;
 }
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
-.head {
+:root {
+    --width: 1320px;
+}
+
+body {
+    background-color: black;
+}
+
+/* 메인 컨테이너 */
+main {
+    width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.header {
-    display: flex;
-    width: 80%;
-    height: 100px;
-    border-radius: 50px;
-    background-color: #f7f7f7;
-    justify-content: space-between;
-    margin-top: 20px;
+.main_container {
+    width: var(--width);
+}
+
+/* 헤더 영역 */
+header {
     position: fixed;
-    z-index: 99;
+    width: calc(var(--width) - 20px);
+    margin: 0 10px;
+    margin-top: 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    border-radius: 60px;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    color: #eee;
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* 로고 */
+.logo {
+    display: flex;
 }
 
 .logo img {
-    width: 100px;
-    height: 100px;
+    height: 80px;
 }
 
-.nav {
-    width: 90%;
-    height: 100%;
-}
-
-.menu {
+/* 내비게이션 */
+nav ul {
     display: flex;
-    height: 100%;
+    margin-left: 20px;
 }
 
-.menu > li {
-    padding-inline: 20px;
-    height: 100%;
+nav > ul > li {
+    padding: 0 25px;
 }
 
-.menu > li > a {
-    display: flex;
-    font-size: 17px;
+nav > ul > li > a {
+    position: relative;
+    display: block;
+    font-size: 16px;
     text-transform: capitalize;
-    color: #222;
-    height: 97%;
-    align-items: center;
+    height: 80px;
+    align-content: center;
 }
 
-.underline {
+nav > ul > li > a::before {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
     width: 100%;
     height: 3px;
     background-color: #A14E4E;
-    transition: 0.2s ease-in-out;
-    border-radius: 20px;
-    transform: scaleX(0);
     transform-origin: center;
+    transform: scaleX(0);
 }
 
-.menu > li > a:hover {
-    color: #A14E4E;
-}
-
-.menu > li > a:hover ~ .underline{
+nav > ul > li > a:hover::before {
+    transition: .2s ease-in-out;
     transform: scaleX(1);
 }
 
+/* 유저 */
 .user {
-    width: 25%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
     display: flex;
-    height: 100%;
-    justify-content: right;
-    padding-right: 20px;
 }
 
-.user > li {
-    height: 100%;
-    padding-inline: 20px;
+.user a {
+    font-size: 14px;
+    margin-right: 25px;
+    text-transform: uppercase;
 }
 
-.user > li > a {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    font-size: 15px;
-    color: #222;
-    opacity: 0.5;
+.user a:hover {
+    font-weight: bold;
 }
 
-.user > li > a:hover {
-    opacity: 1;
-    color: #A14E4E;
-}
-
-.visual {
+/* 비주얼 영역 */
+#visual {
+    position: relative;
     width: 100%;
-    height: 100%;
-}
-
-.slides-box {
-    width: 100%;
-    height: 110vh;
+    height: 100vh;
     overflow: hidden;
 }
 
 .slides {
+    position: relative;
     width: 500%;
-    height: 110vh;
+    height: 100vh;
     display: flex;
-    animation: slide 10s infinite;
-    position: relative;
-}
-
-.slide img {
-    width: 50%;
-    height: 110vh;
-    object-fit: cover;
-}
-
-.slide {
-    position: relative;
-    width: 100%;
-    display: flex;
-}
-
-.text {
-    position: absolute;
-    width: 100%;
-    height: 110vh;
-    display: block;
-    font-size: 50px;
-    color: white;
-    backdrop-filter: brightness(40%);
-}
-.text strong,span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.text strong {
-    text-transform: uppercase;
-    display: block;
-    width: 1500px;
-    text-align: center;
-}
-
-.text span {
-    transform: translate(-50%, 200%);
-    font-size: 20px;
-    color: white;
+    overflow: hidden;
+    animation: slide 10s infinite ease-in-out;
 }
 
 @keyframes slide {
@@ -193,80 +165,67 @@ a {
     }
 }
 
-.box {
-    width: 100%;
-    height: 600px;
-    background: linear-gradient(to bottom,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.3) 30%,
-    rgba(0, 0, 0, 1) 50%,
-    rgba(0, 0, 0, 0.3) 80%,
-    rgba(0, 0, 0, 0) 100%);
-    position: absolute;
-    z-index: 10;
-    top: -330px;
-}
-
-.information {
-    width: 100%;
-    height: 130vh;
+.slide {
     position: relative;
-}
-
-.information > img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    overflow: hidden;
+    display: flex;
 }
 
-.ifm-gradient {
-    width: 100%;
-    height: 100%;
+.slide::before {
     position: absolute;
+    content: "";
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     background: linear-gradient(to bottom,
     rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.3) 30%,
-    rgba(0, 0, 0, 0.6) 50%,
-    rgba(0, 0, 0, 1) 60%,
+    rgba(0, 0, 0, 0.1) 20%,
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0.3) 40%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.5) 60%,
+    rgba(0, 0, 0, 0.6) 65%,
+    rgba(0, 0, 0, 1) 99%,
     rgba(0, 0, 0, 1) 100%);
-    backdrop-filter: brightness(40%);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.slide_img {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
     display: flex;
-    align-items: end;
     justify-content: center;
+    align-items: center;
 }
 
-.ifm-container {
-    width: 80%;
-    height: 40%;
-    color: white;
-    position: relative;
-}
-
-.ifm-title {
+.slide_img img {
+    object-fit: cover;
     width: 100%;
-    height: 45%;
-    font-size: 20px;
+    height: 100%;
 }
 
-.ifm-title h1 {
-    font-size: 50px;
-    margin-bottom: 20px;
-    color: #A14E4E;
-}
-
-.ifm-content {
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
     width: 100%;
-    height: 45%;
-    position: absolute;
-    bottom: 0;
 }
 
-.ifm-container img {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    right: 0;
-    top: 50px;
+.text strong {
+    font-size: 40px;
+    color: #eee;
+    text-transform: uppercase;
+}
+
+.text span {
+    display: block;
+    margin-top: 15px;
+    font-size: 16px;
+    color: #eee;
 }

@@ -1,0 +1,108 @@
+/* 캘린더 영역 */
+#calendar {
+    padding-top: 240px;
+    color: #eee;
+}
+
+.calendar_title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eee;
+}
+
+/* 날짜 */
+.date {
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.date span:nth-child(2) {
+    margin: 0 10px;
+}
+
+.date span:nth-child(3) {
+    color: #A14E4E;
+}
+
+/* 스케줄 */
+.schedule {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.schedule > div {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.mark {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.today .mark {
+    border: 1px solid orange;
+}
+.game .mark {
+    border: 1px solid green;
+}
+.not_game .mark {
+    border: 1px solid red;
+}
+
+.schedule p {
+    font-size: 16px;
+    color: #a0a0a0;
+}
+
+/* 캘린더 / 달력 */
+.day_week {
+    display: flex;
+    justify-content: space-between;
+    color: #a0a0a0;
+    font-size: 18px;
+    text-transform: uppercase;
+    height: 25px;
+    margin-block: 15px;
+}
+
+.day_week p {
+    width: 15%;
+    text-align: center;
+}
+
+.calendar {
+    display: flex;
+    color: #eee;
+    width: 100%;
+    height: var(100% - 155px);
+}
+
+.column {
+    width: 15%;
+    height: 100%;
+    border-top: 1px solid gray;
+}
+
+.day,
+.day1 {
+    height: 175px;
+    text-align: right;
+    border: 1px solid gray;
+    border-right: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    color: #eee;
+}
+
+.day1 {
+    border-left: none;
+}
