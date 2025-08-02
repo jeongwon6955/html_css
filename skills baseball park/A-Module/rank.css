@@ -1,0 +1,138 @@
+/* 랭킹 영역 */
+.ranking {
+    width: 100%;
+    padding-top: 160px;
+}
+
+/* 리그별 버튼 */
+.league-btn {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.leag-btn {
+    display: block;
+    width: 120px;
+    height: 50px;
+    align-content: center;
+    text-align: center;
+    border-radius: 50px;
+    border: 1px solid #ffffff;
+    margin-right: 30px;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.leag-btn::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 50px;
+    background-color: var(--basic-color);
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.leag-btn:hover {
+    transition: all 0.2s ease-in-out;
+    border-color: var(--basic-color);
+}
+
+.leag-btn:hover::before {
+    width: 120px;
+}
+
+/* 랭킹 컨테이너 */
+.rank-content {
+    width: 100%;
+    height: 400px;
+    margin-top: 40px;
+    display: flex;   
+}
+
+/* 리그별 랭킹 */
+.league-rank {
+    width: 60%;
+    height: 100%;
+    box-shadow: 0px 0px 1px 1px #ffffff inset;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.night,
+.weekend,
+.dawn {
+    width: calc(100% - 100px);
+    height: calc(100% - 100px);
+    position: absolute;
+    top: -300px;
+    left: 50px;
+}
+
+.ranking > #night:checked ~ .rank-content > .league-rank > .night {
+    top: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+.ranking > #weekend:checked ~ .rank-content > .league-rank > .weekend {
+    top: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+.ranking > #dawn:checked ~ .rank-content > .league-rank > .dawn {
+    top: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+.night span,
+.weekend span,
+.dawn span {
+    color: var(--basic-color);
+}
+
+.night h1,
+.weekend h1,
+.dawn h1 {
+    color: #ffffff;
+}
+
+.rank {
+    display: flex;
+    width: 100%;
+    height: calc(100% - 35px);
+    color: white;
+    align-items: center;
+    font-size: 15px;
+}
+
+.bowler,
+.batter {
+    display: flex;
+    width: 50%;
+}
+
+.bowler ul,
+.batter ul {
+    margin-left: 30px;
+}
+
+.bowler ul li,
+.batter ul li {
+    margin: 10px;
+}
+
+/* 주요 부문 */
+.main-rank {
+    width: 40%;
+    height: 100%;
+    box-shadow: 0px 0px 1px 1px #ffffff inset;
+    border-radius: 10px;
+}
