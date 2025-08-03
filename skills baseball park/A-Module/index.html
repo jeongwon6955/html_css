@@ -233,6 +233,12 @@
                 <input type="radio" name="rank" id="night" checked>
                 <input type="radio" name="rank" id="weekend">
                 <input type="radio" name="rank" id="dawn">
+                <input type="radio" name="rank1" id="night-bowler" checked>
+                <input type="radio" name="rank1" id="night-batter">
+                <input type="radio" name="rank2" id="weekend-bowler" checked>
+                <input type="radio" name="rank2" id="weekend-batter">
+                <input type="radio" name="rank3" id="dawn-bowler" checked>
+                <input type="radio" name="rank3" id="dawn-batter">
 
                 <div class="league-btn">
                     <label for="night" class="leag-btn">
@@ -250,28 +256,44 @@
                         <div class="night">
                             <h1><span>나이트</span> 리그</h1>
                             <div class="rank">
+                                <div class="rank-title">
+                                    <label for="night-bowler">
+                                        <h3>투수</h3>
+                                    </label>
+                                    <label for="night-batter">
+                                        <h3>타자</h3>
+                                    </label>
+                                </div>
                                 <div class="bowler">
-                                    <h4><span>투수</span> 순위</h4>
-                                    <ul>
-                                        <li>1. 나일투</li>
-                                        <li>2. 나이투</li>
-                                        <li>3. 나삼투</li>
-                                        <li>4. 나사투</li>
-                                        <li>5. 나오투</li>
-                                        <li>6. 나육투</li>
-                                        <li>7. 나칠투</li>
+                                    <h2><span>투수</span> 순위</h2>
+                                    <ul class="rank-list">
+                                        <ul>
+                                            <li>1. 나일투</li>
+                                            <li>2. 나이투</li>
+                                            <li>3. 나삼투</li>
+                                            <li>4. 나사투</li>
+                                        </ul>
+                                        <ul>
+                                            <li>5. 나오투</li>
+                                            <li>6. 나육투</li>
+                                            <li>7. 나칠투</li>
+                                        </ul>
                                     </ul>
                                 </div>
                                 <div class="batter">
-                                    <h4><span>타자</span> 순위</h4>
-                                    <ul>
-                                        <li>1. 나일타</li>
-                                        <li>2. 나이타</li>
-                                        <li>3. 나삼타</li>
-                                        <li>4. 나사타</li>
-                                        <li>5. 나오타</li>
-                                        <li>6. 나육타</li>
-                                        <li>7. 나칠타</li>
+                                    <h2><span>타자</span> 순위</h2>
+                                     <ul class="rank-list">
+                                        <ul>
+                                            <li>1. 나일타</li>
+                                            <li>2. 나이타</li>
+                                            <li>3. 나삼타</li>
+                                            <li>4. 나사타</li>
+                                        </ul>
+                                        <ul>
+                                            <li>5. 나오타</li>
+                                            <li>6. 나육타</li>
+                                            <li>7. 나칠타</li>
+                                        </ul>
                                     </ul>
                                 </div>
                             </div>
@@ -279,28 +301,44 @@
                         <div class="weekend">
                             <h1><span>주말</span> 리그</h1>
                             <div class="rank">
+                                <div class="rank-title">
+                                    <label for="weekend-bowler">
+                                        <h3>투수</h3>
+                                    </label>
+                                    <label for="weekend-batter">
+                                        <h3>타자</h3>
+                                    </label>
+                                </div>
                                 <div class="bowler">
-                                    <h4><span>투수</span> 순위</h4>
-                                    <ul>
-                                        <li>1. 주일투</li>
-                                        <li>2. 주이투</li>
-                                        <li>3. 주삼투</li>
-                                        <li>4. 주사투</li>
-                                        <li>5. 주오투</li>
-                                        <li>6. 주육투</li>
-                                        <li>7. 주칠투</li>
+                                    <h2><span>투수</span> 순위</h2>
+                                    <ul class="rank-list">
+                                        <ul>
+                                            <li>1. 주일투</li>
+                                            <li>2. 주이투</li>
+                                            <li>3. 주삼투</li>
+                                            <li>4. 주사투</li>
+                                        </ul>
+                                        <ul>
+                                            <li>5. 주오투</li>
+                                            <li>6. 주육투</li>
+                                            <li>7. 주칠투</li>
+                                        </ul>
                                     </ul>
                                 </div>
                                 <div class="batter">
-                                    <h4><span>투수</span> 순위</h4>
-                                    <ul>
-                                        <li>1. 주일투</li>
-                                        <li>2. 주이투</li>
-                                        <li>3. 주삼투</li>
-                                        <li>4. 주사투</li>
-                                        <li>5. 주오투</li>
-                                        <li>6. 주육투</li>
-                                        <li>7. 주칠투</li>
+                                    <h2><span>타자</span> 순위</h2>
+                                     <ul class="rank-list">
+                                        <ul>
+                                            <li>1. 주일타</li>
+                                            <li>2. 주이타</li>
+                                            <li>3. 주삼타</li>
+                                            <li>4. 주사타</li>
+                                        </ul>
+                                        <ul>
+                                            <li>5. 주오타</li>
+                                            <li>6. 주육타</li>
+                                            <li>7. 주칠타</li>
+                                        </ul>
                                     </ul>
                                 </div>
                             </div>
@@ -308,28 +346,44 @@
                         <div class="dawn">
                             <h1><span>새벽</span> 리그</h1>
                             <div class="rank">
+                                <div class="rank-title">
+                                    <label for="dawn-bowler">
+                                        <h3>투수</h3>
+                                    </label>
+                                    <label for="dawn-batter">
+                                        <h3>타자</h3>
+                                    </label>
+                                </div>
                                 <div class="bowler">
-                                    <h4><span>투수</span> 순위</h4>
-                                    <ul>
-                                        <li>1. 새일투</li>
-                                        <li>2. 새이투</li>
-                                        <li>3. 새삼투</li>
-                                        <li>4. 새사투</li>
-                                        <li>5. 새오투</li>
-                                        <li>6. 새육투</li>
-                                        <li>7. 새칠투</li>
+                                    <h2><span>투수</span> 순위</h2>
+                                    <ul class="rank-list">
+                                        <ul>
+                                            <li>1. 새일투</li>
+                                            <li>2. 새이투</li>
+                                            <li>3. 새삼투</li>
+                                            <li>4. 새사투</li>
+                                        </ul>
+                                        <ul>
+                                            <li>5. 새오투</li>
+                                            <li>6. 새육투</li>
+                                            <li>7. 새칠투</li>
+                                        </ul>
                                     </ul>
                                 </div>
                                 <div class="batter">
-                                    <h4><span>투수</span> 순위</h4>
-                                    <ul>
-                                        <li>1. 새일투</li>
-                                        <li>2. 새이투</li>
-                                        <li>3. 새삼투</li>
-                                        <li>4. 새사투</li>
-                                        <li>5. 새오투</li>
-                                        <li>6. 새육투</li>
-                                        <li>7. 새칠투</li>
+                                    <h2><span>타자</span> 순위</h2>
+                                     <ul class="rank-list">
+                                        <ul>
+                                            <li>1. 새일타</li>
+                                            <li>2. 새이타</li>
+                                            <li>3. 새삼타</li>
+                                            <li>4. 새사타</li>
+                                        </ul>
+                                        <ul>
+                                            <li>5. 새오타</li>
+                                            <li>6. 새육타</li>
+                                            <li>7. 새칠타</li>
+                                        </ul>
                                     </ul>
                                 </div>
                             </div>

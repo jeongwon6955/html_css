@@ -73,7 +73,7 @@
     width: calc(100% - 100px);
     height: calc(100% - 100px);
     position: absolute;
-    top: -300px;
+    top: -1000px;
     left: 50px;
 }
 
@@ -105,28 +105,104 @@
 }
 
 .rank {
-    display: flex;
     width: 100%;
     height: calc(100% - 35px);
     color: white;
-    align-items: center;
     font-size: 15px;
+    position: relative;
+}
+
+.rank-title {
+    display: flex;
+    margin-top: 30px;
+}
+
+.rank-title label {
+    width: 80px;
+    height: 30px;
+    border: 1px solid #ffffff;
+    border-radius: 40px;
+    align-content: center;
+    text-align: center;
+    margin-right: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.rank-title label::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 30px;
+    background-color: var(--basic-color);
+    z-index: -1;
+    transition: 0.2s ease-in-out;
+}
+
+.rank-title > label:hover::before {
+    width: 80px;
+}
+
+.rank-title > label:hover {
+    transition: 0.2s ease-in-out;
+    border-color: var(--basic-color);
 }
 
 .bowler,
 .batter {
     display: flex;
-    width: 50%;
+    width: 100%;
+    height: calc(100% - 80px);
+    position: absolute;
+    top: 30px;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
 }
 
-.bowler ul,
-.batter ul {
-    margin-left: 30px;
+#night-bowler:checked ~ .rank-content > .league-rank > .night > .rank > .bowler {
+    opacity: 1;
+}
+
+#night-batter:checked ~ .rank-content > .league-rank > .night > .rank > .batter {
+    opacity: 1;
+}
+
+#weekend-bowler:checked ~ .rank-content > .league-rank > .weekend > .rank > .bowler {
+    opacity: 1;
+}
+
+#weekend-batter:checked ~ .rank-content > .league-rank > .weekend > .rank > .batter {
+    opacity: 1;
+}
+
+#dawn-bowler:checked ~ .rank-content > .league-rank > .dawn > .rank > .bowler {
+    opacity: 1;
+}
+
+#dawn-batter:checked ~ .rank-content > .league-rank > .dawn > .rank > .batter {
+    opacity: 1;
+}
+
+.bowler h2, .batter h2 {
+    width: 40%;
+    align-content: center;
+}
+
+.rank-list {
+    width: 50%;
+    display: flex;
+}
+
+.rank-list ul {
+    margin-right: 30px;
 }
 
 .bowler ul li,
 .batter ul li {
-    margin: 10px;
+    margin: 15px;
+    font-size: 20px;
 }
 
 /* 주요 부문 */
