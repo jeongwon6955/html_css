@@ -240,7 +240,7 @@
     font-weight: bolder;
     font-size: 18px;
     box-shadow: 2px 2px 6px 2px #8c8b8b;
-    margin-block: 10px;
+    margin-block: 3px;
     padding-inline: 30px;
     align-items: center;
     border-radius: 30px;
@@ -297,6 +297,46 @@
     height: 100px;
 }
 
-#bat:checked ~ .rank-content > .main-rank > label > img {
+#bat:checked ~ .rank-content > .main-rank > label:nth-of-type(1) > img {
+    transform: rotate(180deg);
+}
+
+#hom:checked ~ .rank-content > .main-rank > .hom-con {
+    height: 100px;
+}
+
+#hom:checked ~ .rank-content > .main-rank > label:nth-of-type(2) > img {
+    transform: rotate(180deg);
+}
+
+#mul:checked ~ .rank-content > .main-rank > .mul-con {
+    height: 100px;
+}
+
+#mul:checked ~ .rank-content > .main-rank > label:nth-of-type(3) > img {
+    transform: rotate(180deg);
+}
+
+#ear:checked ~ .rank-content > .main-rank > .ear-con {
+    height: 100px;
+}
+
+#ear:checked ~ .rank-content > .main-rank > label:nth-of-type(4) > img {
+    transform: rotate(180deg);
+}
+
+#out:checked ~ .rank-content > .main-rank > .out-con {
+    height: 100px;
+}
+
+#out:checked ~ .rank-content > .main-rank > label:nth-of-type(5) > img {
+    transform: rotate(180deg);
+}
+
+#sav:checked ~ .rank-content > .main-rank > .sav-con {
+    height: 100px;
+}
+
+#sav:checked ~ .rank-content > .main-rank > label:nth-of-type(6) > img {
     transform: rotate(180deg);
 }
