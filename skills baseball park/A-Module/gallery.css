@@ -1,0 +1,32 @@
+/* 갤러리 영역 */
+.gallery {
+    width: 100%;
+    padding-top: 160px;
+    height: 500px;
+}
+
+.gl_slide-box {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.gl_slides {
+    display: flex;
+    width: 120%;
+    height: 100%;
+    transform: translateX(528px);
+}
+
+.gl_slide {
+    width: 20%;
+    height: 100%;
+    margin-inline: 10px;
+}
+
+.gl_slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+}
