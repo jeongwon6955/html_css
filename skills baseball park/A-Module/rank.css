@@ -4,6 +4,18 @@
     padding-top: 160px;
 }
 
+.ranking > h1 {
+    color: white;
+    margin-bottom: 30px;
+    padding: 0 40px;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.ranking > h1 > span {
+    color: var(--basic-color);
+}
+
 /* 리그별 버튼 */
 .league-btn {
     width: 100%;
@@ -11,6 +23,7 @@
     display: flex;
     justify-content: left;
     align-items: center;
+    padding: 0 30px;
 }
 
 .leag-btn {
@@ -61,8 +74,6 @@
 .league-rank {
     width: 60%;
     height: 100%;
-    box-shadow: 0px 0px 1px 1px #ffffff inset;
-    border-radius: 10px;
     position: relative;
     overflow: hidden;
 }
@@ -78,17 +89,17 @@
 }
 
 .ranking > #night:checked ~ .rank-content > .league-rank > .night {
-    top: 50px;
+    top: 10px;
     transition: all 0.3s ease-in-out;
 }
 
 .ranking > #weekend:checked ~ .rank-content > .league-rank > .weekend {
-    top: 50px;
+    top: 10px;
     transition: all 0.3s ease-in-out;
 }
 
 .ranking > #dawn:checked ~ .rank-content > .league-rank > .dawn {
-    top: 50px;
+    top: 10px;
     transition: all 0.3s ease-in-out;
 }
 
@@ -127,6 +138,7 @@
     margin-right: 20px;
     position: relative;
     overflow: hidden;
+    font-size: 12px;
 }
 
 .rank-title label::before {
@@ -225,9 +237,6 @@
 .main-rank {
     width: 40%;
     height: 100%;
-    box-shadow: 0px 0px 1px 1px #ffffff inset;
-    border-radius: 10px;
-    padding: 15px 50px;
     overflow: hidden;
 }
 
@@ -236,19 +245,14 @@
     justify-content: space-between;
     width: 100%;
     height: 40px;
-    color: black;
-    font-weight: bolder;
+    color: #ffffff;
     font-size: 18px;
-    box-shadow: 2px 2px 6px 2px #8c8b8b;
     margin-block: 3px;
     padding-inline: 30px;
     align-items: center;
-    border-radius: 30px;
-    background-color: #d6d4d4;
 }
 
 .main-rank label:hover {
-    box-shadow: inset -2px -2px 4px -1px #8c8b8b;
     font-size: 16px;
 }
 
@@ -270,31 +274,24 @@
     align-content: center;
     overflow: hidden;
     transition: all 0.3s;
+    border-bottom: 1px solid #a19d9d;
 }
 
-.con-title {
-    width: 100%;
-    align-content: center;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.con-title span {
-    color: var(--basic-color);
-    font-weight: bold;
-    font-size: 18px;
-}
 .con {
     width: 100%;
     text-align: center;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #a19d9d;
 }
 
 .con li {
+    width: 86px;
     display: inline;
     padding: 5px;
 }
 #bat:checked ~ .rank-content > .main-rank > .bat-con {
-    height: 100px;
+    height: 70px;
 }
 
 #bat:checked ~ .rank-content > .main-rank > label:nth-of-type(1) > img {
@@ -302,7 +299,7 @@
 }
 
 #hom:checked ~ .rank-content > .main-rank > .hom-con {
-    height: 100px;
+    height: 70px;
 }
 
 #hom:checked ~ .rank-content > .main-rank > label:nth-of-type(2) > img {
@@ -310,7 +307,7 @@
 }
 
 #mul:checked ~ .rank-content > .main-rank > .mul-con {
-    height: 100px;
+    height: 70px;
 }
 
 #mul:checked ~ .rank-content > .main-rank > label:nth-of-type(3) > img {
@@ -318,7 +315,7 @@
 }
 
 #ear:checked ~ .rank-content > .main-rank > .ear-con {
-    height: 100px;
+    height: 70px;
 }
 
 #ear:checked ~ .rank-content > .main-rank > label:nth-of-type(4) > img {
@@ -326,7 +323,7 @@
 }
 
 #out:checked ~ .rank-content > .main-rank > .out-con {
-    height: 100px;
+    height: 70px;
 }
 
 #out:checked ~ .rank-content > .main-rank > label:nth-of-type(5) > img {
@@ -334,7 +331,7 @@
 }
 
 #sav:checked ~ .rank-content > .main-rank > .sav-con {
-    height: 100px;
+    height: 70px;
 }
 
 #sav:checked ~ .rank-content > .main-rank > label:nth-of-type(6) > img {
