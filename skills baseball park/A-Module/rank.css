@@ -33,7 +33,7 @@
     align-content: center;
     text-align: center;
     border-radius: 50px;
-    border: 1px solid #ffffff;
+    box-shadow: 0px 0px 3px 1px white;
     margin-right: 30px;
     color: #ffffff;
     position: relative;
@@ -55,7 +55,7 @@
 
 .leag-btn:hover {
     transition: all 0.2s ease-in-out;
-    border-color: var(--basic-color);
+    box-shadow: none;
 }
 
 .leag-btn:hover::before {
@@ -131,7 +131,7 @@
 .rank-title label {
     width: 80px;
     height: 30px;
-    border: 1px solid #ffffff;
+    box-shadow: 0px 0px 3px 1px white;
     border-radius: 40px;
     align-content: center;
     text-align: center;
@@ -159,7 +159,7 @@
 
 .rank-title > label:hover {
     transition: 0.2s ease-in-out;
-    border-color: var(--basic-color);
+    box-shadow: none;
 }
 
 .bowler,

@@ -1,0 +1,57 @@
+/* 굿즈 영역 */
+.goods {
+    width: 100%;
+    height: 1200px;
+    padding-top: 160px;
+}
+
+.goods > h1 {
+    color: white;
+    margin-bottom: 30px;
+    padding: 0 40px;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.goods > h1 > span {
+    color: var(--basic-color);
+}
+
+.go_img-box,
+.go_img-box2 {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 40px;
+    padding-bottom: 40px;
+}
+
+.go_img {
+    width: 600px;
+    height: 100%;
+    position: relative;
+}
+
+.go_img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    object-fit: cover;
+}
+
+.go_best {
+    width: 80px;
+    height: 30px;
+    color: white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 19px;
+    background-color: var(--basic-color);
+    border-radius: 50px;
+    top: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: lighter;
+}

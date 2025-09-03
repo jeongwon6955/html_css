@@ -93,7 +93,7 @@
     text-align: center;
     height: 50px;
     line-height: 45px;
-    border: 1px solid #eee;
+   box-shadow: 0px 0px 3px 1px white;
     border-radius: 50px;
     font-size: 18px;
     overflow: hidden;
@@ -115,7 +115,7 @@
 
 .info_more:hover {
     transition: .2s ease-out;
-    border-color: #A14E4E;
+    box-shadow: none;
 }
 .info_more:hover::before {
     width: 100%;
