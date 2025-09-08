@@ -59,6 +59,7 @@
     text-align: center;
     text-transform: uppercase;
     font-weight: lighter;
+    z-index: 10;
 }
 
 .go_box {
@@ -68,7 +69,10 @@
     z-index: 10;
     position: absolute;
     top: 0;
+    transition: all 0.3s;
 }
+
+/* 기본 세팅 */
 
 .go_box:nth-of-type(2) {
     left: 240px;
@@ -106,6 +110,8 @@
     left: 440px;
 }
 
+/* 외부 박스 크기 변경 */
+
 .go_box:hover ~ .go_img.first {
     width: 900px;
     height: 600px;
@@ -125,7 +131,101 @@
     height: 200px;
 }
 
+/* 확대 */
+
 .go_box:nth-of-type(1):hover ~ .go_img.first > img {
     transform: scale(1.5);
     transform-origin: top left;
+    transition: all 0.3s;
+}
+
+.go_box:nth-of-type(2):hover ~ .go_img.first > img {
+    transform: scale(1.5);
+    transform-origin: top center;
+    transition: all 0.3s;
+}
+
+.go_box:nth-of-type(3):hover ~ .go_img.first > img {
+    transform: scale(1.5);
+    transform-origin: top right;
+    transition: all 0.3s;
+}
+
+.go_box:nth-of-type(4):hover ~ .go_img.first > img {
+    transform: scale(1.5);
+    transform-origin: center left;
+    transition: all 0.3s;
+}
+
+.go_box:nth-of-type(5):hover ~ .go_img.first > img {
+    transform: scale(1.5);
+    transform-origin: center center;
+    transition: all 0.3s;
+}
+
+.go_box:nth-of-type(6):hover ~ .go_img.first > img {
+    transform: scale(1.5);
+    transform-origin: center right;
+    transition: all 0.3s;
+}
+
+.go_box:nth-of-type(7):hover ~ .go_img.first > img {
+    transform: scale(1.5);
+    transform-origin: bottom left;
+    transition: all 0.3s;
+}
+
+.go_box:nth-of-type(8):hover ~ .go_img.first > img {
+    transform: scale(1.5);
+    transform-origin: bottom center;
+    transition: all 0.3s;
+}
+
+.go_box:nth-of-type(9):hover ~ .go_img.first > img {
+    transform: scale(1.5);
+    transform-origin: bottom right;
+    transition: all 0.3s;
+}
+
+/* 호버 버튼 크기 변경 */
+
+.go_img-box:has(.go_box:hover) .go_box {
+    width: 300px;
+    height: 200px;
+}
+
+.go_img-box:has(.go_box:hover) .go_box:nth-of-type(2) {
+    left: 340px;
+}
+
+.go_img-box:has(.go_box:hover) .go_box:nth-of-type(3) {
+    left: 640px;
+}
+
+.go_img-box:has(.go_box:hover) .go_box:nth-of-type(4) {
+    top: 200px;
+}
+
+.go_img-box:has(.go_box:hover) .go_box:nth-of-type(5) {
+    left: 340px;
+    top: 200px;
+}
+
+.go_img-box:has(.go_box:hover) .go_box:nth-of-type(6) {
+    left: 640px;
+    top: 200px;
+}
+
+.go_img-box:has(.go_box:hover) .go_box:nth-of-type(7) {
+    top: 400px;
+}
+
+.go_img-box:has(.go_box:hover) .go_box:nth-of-type(8) {
+    left: 340px;
+    top: 400px;
+}
+
+.go_img-box:has(.go_box:hover) .go_box:nth-of-type(9) {
+    left: 640px;
+    top: 400px;
 }
