@@ -119,3 +119,57 @@ nav > ul > li > a:hover {
 .user a:hover {
     font-weight: bold;
 }
+
+/* 푸터 영역 */
+
+.footer {
+    width: 100%;
+    display: flex;
+    box-shadow: inset 0px 1px 1px #a0a0a0;
+}
+
+.fo_logo img {
+    width: 200px;
+    height: 200px;
+}
+
+.fo_copy {
+    width: 100%;
+    height: 200px;
+    font-size: 15px;
+    color: #a0a0a0;
+    align-content: end;
+    line-height: 27px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.fo_left,
+.fo_right {
+    align-content: end;
+}
+
+.fo_left1 {
+    display: flex;
+}
+
+.fo_left1 span {
+    margin-inline: 10px;
+}
+
+.title {
+    position: absolute;
+    top: 25%;
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.title span {
+    color: var(--basic-color);
+}
