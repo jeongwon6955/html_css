@@ -117,6 +117,7 @@
     width: 900px;
     height: 600px;
     z-index: 1;
+    border-radius: 30px;
 }
 
 .go_box:hover ~ .go_img.second {

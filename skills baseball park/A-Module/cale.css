@@ -151,14 +151,14 @@ input {
 
 .modal_line > label {
     display: grid;
-    width: 100px;
-    height: 45px;
+    width: 50px;
+    height: 25px;
     place-content: center;
     transition: all 0.3s ease-in-out;
     box-shadow: 0px 0px 3px 1px #222;
     border-radius: 30px;
     font-weight: lighter;
-    font-size: 20px;
+    font-size: 12px;
     margin-block: 20px;
 }
 
