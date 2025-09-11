@@ -49,7 +49,7 @@
 .info_intr {
     width: 100%;
     background-color: black;
-    padding-top: 160px;
+    padding-top: 100px;
 }
 
 .info_intr h1 {
@@ -93,7 +93,7 @@
 }
 
 .info_info1 p:nth-of-type(2) {
-    color: #a0a0a0;
+    color: #cecaca;
     font-size: 12px;
     margin-bottom: 60px;
 }
@@ -118,7 +118,7 @@
 
 .info_info p {
     font-size: 16px;
-    color: #a0a0a0;
+    color: #cecaca;
     font-weight: lighter;
     letter-spacing: 2px;
     line-height: 30px;
@@ -127,4 +127,29 @@
 .info_info .info_line2 {
     width: 100%;
     height: 50px;
+}
+
+.info_use {
+    width: 100%;
+    height: 500px;
+    background-color: black;
+    padding-top: 100px;
+}
+
+.info_use h1 {
+    color: #fff;
+    margin-bottom: 50px;
+    font-size: 40px;
+}
+
+.info_use h1 span {
+    color: var(--basic-color);
+}
+
+.info_use_content p {
+    font-size: 16px;
+    color: #cecaca;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    line-height: 50px;
 }
