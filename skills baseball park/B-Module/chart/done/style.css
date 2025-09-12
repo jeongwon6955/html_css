@@ -66,7 +66,7 @@ input {
 
 .row_column_btn {
     width: 100%;
-    height: 100px;
+    height: 80px;
     display: flex;
 }
 
@@ -108,4 +108,73 @@ input {
 
 #column:checked ~ .row_column_btn > .cha_column > label > h2 {
     font-weight: 400;
+}
+
+/* 리그 요일 버튼 */
+
+.cha_leag_week {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+}
+
+.cha_leag {
+    display: flex;
+}
+
+.cha_btn {
+    display: block;
+    width: 120px;
+    height: 50px;
+    align-content: center;
+    text-align: center;
+    border-radius: 50px;
+    box-shadow: 0px 0px 3px 1px white;
+    margin-right: 30px;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.cha_btn::before {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 50px;
+    background-color: var(--basic-color);
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.cha_btn:hover {
+    transition: all 0.2s ease-in-out;
+    box-shadow: none;
+}
+
+.cha_btn:hover::before {
+    width: 120px;
+}
+
+.cha_week {
+    width: 100px;
+    height: 50px;
+    color: #fff;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px 1px white;
+    font-weight: bold;
+    font-size: 17px;
+    text-align: center;
+}
+
+.cha_week option {
+    font-size: 15px;
+    text-align: center;
 }

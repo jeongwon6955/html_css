@@ -44,7 +44,10 @@
                 <input type="radio" name="row_column_btn" id="row" checked>
                 <input type="radio" name="row_column_btn" id="column">
 
+                <!-- 제목 -->
                 <h1><span>Visitors</span> Chart</h1>
+
+                <!-- 가로 세로 버튼 -->
                 <div class="row_column_btn">
                     <div class="cha_row">
                         <label for="row"><h2>가로로 보기</h2></label>
@@ -52,6 +55,35 @@
                     <div class="cha_column">
                         <label for="column"><h2>세로로 보기</h2></label>
                     </div>
+                </div>
+
+                <!-- input 영역 -->
+                <input type="radio" name="cha_leag_btn" id="cha_night">
+                <input type="radio" name="cha_leag_btn" id="cha_weekend">
+                <input type="radio" name="cha_leag_btn" id="cha_dawn">
+
+                <!-- 리그 요일 버튼 -->
+                <div class="cha_leag_week">
+                    <div class="cha_leag">
+                        <label for="cha_night" class="cha_btn">
+                            나이트리그
+                        </label>
+                        <label for="cha_weekend" class="cha_btn">
+                            주말리그
+                        </label>
+                        <label for="cha_dawn" class="cha_btn">
+                            새벽리그
+                        </label>
+                    </div>
+                    <select class="cha_week">
+                        <option value="월">월요일</option>
+                        <option value="화">화요일</option>
+                        <option value="수">수요일</option>
+                        <option value="목">목요일</option>
+                        <option value="금">금요일</option>
+                        <option value="토">토요일</option>
+                        <option value="일">일요일</option>
+                    </select>
                 </div>
             </section>
 
