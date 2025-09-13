@@ -19,8 +19,8 @@
                 <div class="logo"><img src="../../../img/logo.png" alt="로고 이미지" title="로고 이미지"></div>
                 <!-- 내비게이션 -->
                 <nav><ul>
-                    <li><a href="sub01.html">information</a></li>
-                    <li><a href="#">statistics</a></li>
+                    <li><a href="../../../A-Module/sub01.html">information</a></li>
+                    <li><a href="index.html">statistics</a></li>
                     <li><a href="#">reservation</a></li>
                     <li><a href="#">goods</a></li>
                 </ul></nav>
@@ -57,23 +57,18 @@
                     </div>
                 </div>
 
-                <!-- input 영역 -->
-                <input type="radio" name="cha_leag_btn" id="cha_night">
-                <input type="radio" name="cha_leag_btn" id="cha_weekend">
-                <input type="radio" name="cha_leag_btn" id="cha_dawn">
-
                 <!-- 리그 요일 버튼 -->
                 <div class="cha_leag_week">
                     <div class="cha_leag">
-                        <label for="cha_night" class="cha_btn">
+                        <div class="cha_btn cha_night">
                             나이트리그
-                        </label>
-                        <label for="cha_weekend" class="cha_btn">
+                        </div>
+                        <div class="cha_btn cha_weekend">
                             주말리그
-                        </label>
-                        <label for="cha_dawn" class="cha_btn">
+                        </div>
+                        <div class="cha_btn cha_dawn">
                             새벽리그
-                        </label>
+                        </div>
                     </div>
                     <select class="cha_week">
                         <option value="월">월요일</option>
@@ -85,9 +80,40 @@
                         <option value="일">일요일</option>
                     </select>
                 </div>
-            </section>
 
-            <div class="box" style="width: 100%; height: 100px; background-color: black;"></div>
+                <!-- ui 그래프 영역 -->
+                <div class="chart_graph">
+
+                    <!-- 방문자 통계 -->
+                    <div class="graph_statistics">
+                        <div class="graph_week">
+                            <h2><span>월요일</span> 방문자 현황</h2>
+                            <p class="pick_leag">나이트리그</p>
+                        </div>
+                        <div class="visitant">
+
+                        </div>
+                    </div>
+
+                    <!-- 그래프 -->
+                    <div class="graph_container">
+                        <div class="graph_top">
+                            <div class="graph_top_left">
+
+                            </div>
+                            <div class="graph">
+
+                            </div>
+                        </div>
+                        <div class="graph_bottom">
+                            <div class="empty"></div>
+                            <div class="graph_right">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- 푸터 영역 -->
              <section class="footer">
