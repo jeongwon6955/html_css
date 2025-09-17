@@ -14,6 +14,7 @@ input {
     height: 80vh;
     position: fixed;
     z-index: -10;
+    object-fit: cover;
 }
 
 .chart_visual h1 {
