@@ -2,7 +2,7 @@
   "data": [
     {
       "idx": 1,
-      "img": "../img/goods/01.jpg",
+      "img": "../goods/01.jpg",
       "sale": 12000,
       "title": "바지",
       "price": "3,500",

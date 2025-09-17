@@ -169,6 +169,7 @@ input {
 .goo_box {
     height: 490px;
     color: #fff;
+    position: relative;
 }
 
 .goo_img {
@@ -216,4 +217,17 @@ input {
     padding-inline: 8px;
     border-radius: 5px;
     font-weight: lighter;
+}
+
+.goo_box .best {
+    width: 75px;
+    height: 35px;
+    color: #fff;
+    background-color: var(--basic-color);
+    position: absolute;
+    border-radius: 50px;
+    text-align: center;
+    align-content: center;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
