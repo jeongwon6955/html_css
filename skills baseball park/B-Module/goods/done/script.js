@@ -25,12 +25,10 @@ const Box = document.querySelectorAll(".goo_box");
 
 // 배열 생성
 let saleArrey = [];
-let catgArrey = [];
 
 // json데이터 saleArrey배열에 넣기
 function loadWindow(jsonData) {
     saleArrey = jsonData.data.map(sales => sales);
-    catgArrey = saleArrey.filter(el => el.group === "야구용품");
 };
 
 // 데이터 불러오기
@@ -49,8 +47,16 @@ function dataCall({order,group}) {
         saleArrey.sort((a,b) => parseInt(a.price.replace(/,/g,'')) - parseInt(b.price.replace(/,/g,'')));
     }
     best();
+
+    let targetArrey = saleArrey; // 기본은 전체상품
+
+    if(group && group !== "전체상품") {
+        targetArrey = saleArrey.filter(item => item.group === group);
+        // console.log(targetArrey);
+    }
     imgBox.forEach((box, index) => {
-        const item = saleArrey[index];
+        const item = targetArrey[index];
+        if(!item) return;
         const img = document.createElement('img');
         img.src = item.img;
         box.appendChild(img);
@@ -75,19 +81,19 @@ function dataCall({order,group}) {
         }
     });
     catgBox.forEach((box, index) => {
-        const item = saleArrey[index];
+        const item = targetArrey[index];
         box.innerHTML = item.group;
     });
     titleBox.forEach((box, index) => {
-        const item = saleArrey[index];
+        const item = targetArrey[index];
         box.innerHTML = item.title;
     });
     priBox.forEach((box, index) => {
-        const item = saleArrey[index];
+        const item = targetArrey[index];
         box.innerHTML = item.price + "원";
     });
     saleBox.forEach((box, index) => {
-        const item = saleArrey[index];
+        const item = targetArrey[index];
         const p = document.createElement('p');
         p.innerHTML = item.sale.toLocaleString() + "명이 구매함";
         box.appendChild(p);
@@ -134,6 +140,22 @@ let currentcatg = catg.value;
 catg.addEventListener("change", function() {
     currentcatg = catg.value;
     if(currentcatg === "전체상품") {
+        deletes();
+        dataCall({group: currentcatg});
+    }
+    else if(currentcatg === "야구용품") {
+        deletes();
+        dataCall({group: currentcatg});
+    }
+    else if(currentcatg === "응원도구") {
+        deletes();
+        dataCall({group: currentcatg});
+    }
+    else if(currentcatg === "악세사리") {
+        deletes();
+        dataCall({group: currentcatg});
+    }
+    else if(currentcatg === "의류") {
         deletes();
         dataCall({group: currentcatg});
     }
