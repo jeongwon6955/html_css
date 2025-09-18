@@ -16,12 +16,6 @@ const SAsc = document.querySelector(".s_asc");
 const SDesc = document.querySelector(".s_desc");
 const PAsc = document.querySelector(".p_asc");
 const PDesc = document.querySelector(".p_desc");
-// const imgBox = document.querySelectorAll(".goo_img");
-// const catgBox = document.querySelectorAll(".goo_catg");
-// const titleBox = document.querySelectorAll(".goo_title");
-// const priBox = document.querySelectorAll(".goo_pri");
-// const saleBox = document.querySelectorAll(".goo_sale");
-// const Box = document.querySelectorAll(".goo_box");
 const gooImgBox = document.querySelector(".goo_imgboxs");
 console.log(gooImgBox)
 
@@ -58,67 +52,45 @@ function dataCall({order,group}) {
     }
 
     targetArrey.forEach(item => {
+        // 1. 상품 하나를 담는 박스 생성
         const gooBox = document.createElement("div");
-        const imgBox = document.createElement("div");
-        const catgBox = document.createElement("div");
-        const titleBox = document.createElement("div");
-        const priBox = document.createElement("div");
-        const saleBox = document.createElement("div");
-        gooImgBox.appendChild(gooBox);
-        gooBox.forEach(item => {
-            item.appendChild(imgBox);
-            item.appendChild(catgBox);
-            item.appendChild(titleBox);
-            item.appendChild(priBox);
-            item.appendChild(saleBox);
-        })
         gooBox.className = "goo_box";
-    });
 
-    imgBox.forEach((box, index) => {
-        const item = targetArrey[index];
-        if(!item) return;
-        const img = document.createElement('img');
+        // 2. 각각의 요소 생성
+        const imgBox = document.createElement("div");
+        imgBox.className = "goo_img";
+        const img = document.createElement("img");
         img.src = item.img;
-        box.appendChild(img);
-        const boxs = Number(idxArrey[index]);
-        if(boxs === 4){
-            const best = document.createElement('div');
-            best.textContent = 'BEST';
-            best.className = 'best';
-            box.prepend(best);
-        }
-        else if(boxs === 7) {
-            const best = document.createElement('div');
-            best.textContent = 'BEST';
-            best.className = 'best';
-            box.prepend(best);
-        }
-        else if(boxs === 9) {
-            const best = document.createElement('div');
-            best.textContent = 'BEST';
-            best.className = 'best';
-            box.prepend(best);
-        }
-    });
-    catgBox.forEach((box, index) => {
-        const item = targetArrey[index];
-        box.innerHTML = item.group;
-        box.style.borderBottom = "1px solid #a0a0a0";
-    });
-    titleBox.forEach((box, index) => {
-        const item = targetArrey[index];
-        box.innerHTML = item.title;
-    });
-    priBox.forEach((box, index) => {
-        const item = targetArrey[index];
-        box.innerHTML = item.price + "원";
-    });
-    saleBox.forEach((box, index) => {
-        const item = targetArrey[index];
-        const p = document.createElement('p');
-        p.innerHTML = item.sale.toLocaleString() + "명이 구매함";
-        box.appendChild(p);
+        imgBox.appendChild(img);
+
+        const catgBox = document.createElement("div");
+        catgBox.className = "goo_catg";
+        catgBox.textContent = item.group;
+        catgBox.style.borderBottom = "1px solid #a0a0a0";
+
+        const titleBox = document.createElement("div");
+        titleBox.className = "goo_title";
+        titleBox.textContent = item.title;
+
+        const priBox = document.createElement("div");
+        priBox.className = "goo_pri";
+        priBox.textContent = item.price + "원";
+
+       const saleBox = document.createElement("div");
+       saleBox.className = "goo_sale";
+       const p = document.createElement("p")
+       p.textContent = item.sale.toLocaleString() + "명이 구매함";
+       saleBox.appendChild(p)
+
+       // 3. gooBox 안에 append
+       gooBox.appendChild(imgBox);
+       gooBox.appendChild(catgBox);
+       gooBox.appendChild(titleBox);
+       gooBox.appendChild(priBox);
+       gooBox.appendChild(saleBox);
+
+       // 4. 부모 박스(gooImgBox)에 append
+       gooImgBox.appendChild(gooBox);
     });
 }
 
@@ -131,7 +103,7 @@ function best() {
 
 // 판매량 내림차순 버튼
 SAsc.addEventListener("click", function() {
-    // deletes();
+    deletes();
     dataCall({order:"sdesc"});
 });
 
@@ -186,9 +158,5 @@ catg.addEventListener("change", function() {
 // 데이터 삭제
 
 function deletes() {
-    imgBox.forEach(box => box.replaceChildren());
-    catgBox.forEach(box => box.replaceChildren());
-    titleBox.forEach(box => box.replaceChildren());
-    priBox.forEach(box => box.replaceChildren());
-    saleBox.forEach(box => box.replaceChildren());
+    gooImgBox.replaceChildren();
 }
