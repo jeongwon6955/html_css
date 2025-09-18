@@ -16,12 +16,14 @@ const SAsc = document.querySelector(".s_asc");
 const SDesc = document.querySelector(".s_desc");
 const PAsc = document.querySelector(".p_asc");
 const PDesc = document.querySelector(".p_desc");
-const imgBox = document.querySelectorAll(".goo_img");
-const catgBox = document.querySelectorAll(".goo_catg");
-const titleBox = document.querySelectorAll(".goo_title");
-const priBox = document.querySelectorAll(".goo_pri");
-const saleBox = document.querySelectorAll(".goo_sale");
-const Box = document.querySelectorAll(".goo_box");
+// const imgBox = document.querySelectorAll(".goo_img");
+// const catgBox = document.querySelectorAll(".goo_catg");
+// const titleBox = document.querySelectorAll(".goo_title");
+// const priBox = document.querySelectorAll(".goo_pri");
+// const saleBox = document.querySelectorAll(".goo_sale");
+// const Box = document.querySelectorAll(".goo_box");
+const gooImgBox = document.querySelector(".goo_imgboxs");
+console.log(gooImgBox)
 
 // 배열 생성
 let saleArrey = [];
@@ -54,6 +56,25 @@ function dataCall({order,group}) {
         targetArrey = saleArrey.filter(item => item.group === group);
         // console.log(targetArrey);
     }
+
+    targetArrey.forEach(item => {
+        const gooBox = document.createElement("div");
+        const imgBox = document.createElement("div");
+        const catgBox = document.createElement("div");
+        const titleBox = document.createElement("div");
+        const priBox = document.createElement("div");
+        const saleBox = document.createElement("div");
+        gooImgBox.appendChild(gooBox);
+        gooBox.forEach(item => {
+            item.appendChild(imgBox);
+            item.appendChild(catgBox);
+            item.appendChild(titleBox);
+            item.appendChild(priBox);
+            item.appendChild(saleBox);
+        })
+        gooBox.className = "goo_box";
+    });
+
     imgBox.forEach((box, index) => {
         const item = targetArrey[index];
         if(!item) return;
@@ -83,6 +104,7 @@ function dataCall({order,group}) {
     catgBox.forEach((box, index) => {
         const item = targetArrey[index];
         box.innerHTML = item.group;
+        box.style.borderBottom = "1px solid #a0a0a0";
     });
     titleBox.forEach((box, index) => {
         const item = targetArrey[index];
@@ -109,7 +131,7 @@ function best() {
 
 // 판매량 내림차순 버튼
 SAsc.addEventListener("click", function() {
-    deletes();
+    // deletes();
     dataCall({order:"sdesc"});
 });
 

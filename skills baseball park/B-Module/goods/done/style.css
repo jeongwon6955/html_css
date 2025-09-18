@@ -172,7 +172,7 @@ input {
 .goo_catg {
     width: 100%;
     margin-block: 5px;
-    border-bottom: 1px solid #acacac;
+    /* border-bottom: 1px solid #acacac; */
     padding-block: 8px;
     font-size: 14px;
 }
