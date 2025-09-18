@@ -25,15 +25,24 @@ const Box = document.querySelectorAll(".goo_box");
 
 // 배열 생성
 let saleArrey = [];
+let catgArrey = [];
 
 // json데이터 saleArrey배열에 넣기
 function loadWindow(jsonData) {
     saleArrey = jsonData.data.map(sales => sales);
+    catgArrey = saleArrey.filter(el => el.group === "야구용품");
 };
+
+function orders(index,group) {
+    if(group === "전체상품") {
+        const item = saleArrey[index];
+        return item;
+    }
+}
 
 
 // 데이터 불러오기
-function dataCall(order) {
+function dataCall({order,group}) {
     if(order === "sasc") {
         saleArrey.sort((a,b) => b.sale - a.sale);
     }
@@ -49,6 +58,7 @@ function dataCall(order) {
     }
     best();
     imgBox.forEach((box, index) => {
+        orders(index,group);
         const item = saleArrey[index];
         const img = document.createElement('img');
         img.src = item.img;
@@ -103,26 +113,40 @@ function best() {
 // 판매량 내림차순 버튼
 SAsc.addEventListener("click", function() {
     deletes();
-    dataCall("sasc");
+    dataCall({order:"sasc"});
 });
 
 // 판매량 오름차순 버튼
 SDesc.addEventListener("click", function() {
     deletes();
-    dataCall("sdesc");
+    dataCall({order:"sdesc"});
 });
 
 // 가격 내림차순 버튼
 PAsc.addEventListener("click", function() {
     deletes();
-    dataCall("pasc");
+    dataCall({order:"pasc"});
 });
 
 // 가격 오름차순 버튼
 PDesc.addEventListener("click", function() {
     deletes();
-    dataCall("pdesc");
+    dataCall({order:"pdesc"});
 });
+
+// 그룹 생성
+
+const catg = document.querySelector(".goo_div");
+
+let currentcatg = catg.value;
+
+catg.addEventListener("change", function() {
+    currentcatg = catg.value;
+    if(currentcatg === "전체상품") {
+        deletes();
+        dataCall({group: currentcatg});
+    }
+})
 
 // 데이터 삭제
 
