@@ -193,10 +193,11 @@ function deletes() {
 // 굿즈 수정제안
 
 const fileInput = document.querySelector("#fileinput");
-const canvasBox = document.querySelector(".goo_edit_content")
+const canvasBox = document.querySelector("canvas");
+const ctx = canvasBox.getContext("2d");
 
 // 추가 버튼
-const fileCall = document.querySelector("#add")
+const fileCall = document.querySelector("#add");
 
 fileCall.addEventListener("click", function() {
     fileInput.click();
@@ -207,9 +208,21 @@ fileInput.addEventListener("change", function() {
       const file = fileInput.files[0];
       const Callimg = document.createElement('img');
       Callimg.src = URL.createObjectURL(file);
-      Callimg.style.maxWidth = "200px"; // 크기 제한
-      Callimg.style.display = "block";
-      canvasBox.innerHTML = ""; // 이전 이미지 제거
-      canvasBox.appendChild(Callimg);
-    }
+      Callimg.onload = function() {
+            // 캔버스 크기 맞추기
+            canvasBox.width = Callimg.width;
+            canvasBox.height = Callimg.height;
+            // 캔버스에 이미지 그리기
+            ctx.drawImage(Callimg, 0, 0, canvasBox.width, canvasBox.height);
+       };
+    };
+});
+
+// 삭제 버튼
+
+const fileRemove = document.querySelector('#del');
+
+fileRemove.addEventListener('click', function() {
+    ctx.clearRect(0,0, canvasBox.width, canvasBox.height);
+    fileLoad.value = "";
 });
