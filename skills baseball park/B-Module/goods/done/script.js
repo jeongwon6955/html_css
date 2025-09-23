@@ -226,3 +226,28 @@ fileRemove.addEventListener('click', function() {
     ctx.clearRect(0,0, canvasBox.width, canvasBox.height);
     fileLoad.value = "";
 });
+
+// 글상자
+
+const flieTextAdd = document.querySelector('#write');
+const flieTextBox = document.querySelector('.text_box');
+const flieTextBtn = document.querySelector('#text_btn');
+const flieText = document.querySelector('#text');
+
+flieTextAdd.addEventListener('click', function() {
+    flieTextBox.classList.toggle('show_text_box');
+});
+
+flieTextBtn.addEventListener('click', function() {
+    const Text = flieText.value;
+
+    const dpr = window.devicePixelRatio || 1;
+    canvasBox.width = canvasBox.clientWidth * dpr;
+    canvasBox.height = canvasBox.clientHeight * dpr;
+    ctx.scale(dpr, dpr);
+
+    ctx.font = '40px Pretendard'
+    ctx.fillStyle = "black";
+    ctx.textBaseline = "top"; 
+    ctx.fillText(Text, 0, 0);
+})
