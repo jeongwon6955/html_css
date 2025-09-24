@@ -196,6 +196,16 @@ const fileInput = document.querySelector("#fileinput");
 const canvasBox = document.querySelector("canvas");
 const ctx = canvasBox.getContext("2d");
 
+let Callimg;
+let saveText = "";
+let textX = 20;
+let textY = 20;
+
+const dpr = window.devicePixelRatio || 1;
+canvasBox.width = canvasBox.clientWidth * dpr;
+canvasBox.height = canvasBox.clientHeight * dpr;
+ctx.scale(dpr, dpr);
+
 // 추가 버튼
 const fileCall = document.querySelector("#add");
 
@@ -206,14 +216,11 @@ fileCall.addEventListener("click", function() {
 fileInput.addEventListener("change", function() {
     if (fileInput.files.length > 0) {
       const file = fileInput.files[0];
-      const Callimg = document.createElement('img');
+      Callimg = document.createElement('img');
       Callimg.src = URL.createObjectURL(file);
       Callimg.onload = function() {
-            // 캔버스 크기 맞추기
-            canvasBox.width = Callimg.width;
-            canvasBox.height = Callimg.height;
             // 캔버스에 이미지 그리기
-            ctx.drawImage(Callimg, 0, 0, canvasBox.width, canvasBox.height);
+            redraw();
        };
     };
 });
@@ -224,7 +231,10 @@ const fileRemove = document.querySelector('#del');
 
 fileRemove.addEventListener('click', function() {
     ctx.clearRect(0,0, canvasBox.width, canvasBox.height);
-    fileLoad.value = "";
+    saveText = "";
+    Callimg = null;
+    fileInput.value = "";
+    flieText.value = "";
 });
 
 // 글상자
@@ -234,20 +244,42 @@ const flieTextBox = document.querySelector('.text_box');
 const flieTextBtn = document.querySelector('#text_btn');
 const flieText = document.querySelector('#text');
 
+
 flieTextAdd.addEventListener('click', function() {
     flieTextBox.classList.toggle('show_text_box');
 });
 
 flieTextBtn.addEventListener('click', function() {
-    const Text = flieText.value;
+    saveText = flieText.value;
+    redraw();
+});
 
-    const dpr = window.devicePixelRatio || 1;
-    canvasBox.width = canvasBox.clientWidth * dpr;
-    canvasBox.height = canvasBox.clientHeight * dpr;
-    ctx.scale(dpr, dpr);
-
-    ctx.font = '40px Pretendard'
-    ctx.fillStyle = "black";
+function Textdrow(Text) {
+    ctx.font = '40px Pretendard';
+    ctx.fillStyle = "#222";
     ctx.textBaseline = "top"; 
-    ctx.fillText(Text, 0, 0);
-})
+    ctx.fillText(Text, textX, textY);
+};
+
+// 이미지 + 텍스트 다시 그리기 함수
+function redraw() {
+    ctx.clearRect(0, 0, canvasBox.width, canvasBox.height);
+
+    if (Callimg) {
+        ctx.drawImage(Callimg, 0, 0, canvasBox.width, canvasBox.height);
+    }
+    if (saveText) {
+        Textdrow(saveText);
+    }
+};
+
+// 원래대로 버튼
+
+const flieDef = document.querySelector('#def');
+
+flieDef.addEventListener('click', function() {
+    saveText = "";
+    redraw();
+    fileInput.value = "";
+    flieText.value = "";
+});
