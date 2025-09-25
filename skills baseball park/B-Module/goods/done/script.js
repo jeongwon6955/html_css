@@ -198,8 +198,6 @@ const ctx = canvasBox.getContext("2d");
 
 let Callimg;
 let saveText = "";
-let textX = 20;
-let textY = 20;
 
 const dpr = window.devicePixelRatio || 1;
 canvasBox.width = canvasBox.clientWidth * dpr;
@@ -233,6 +231,8 @@ fileRemove.addEventListener('click', function() {
     ctx.clearRect(0,0, canvasBox.width, canvasBox.height);
     saveText = "";
     Callimg = null;
+    textX = 20;
+    textY = 20;
     fileInput.value = "";
     flieText.value = "";
 });
@@ -255,10 +255,14 @@ flieTextBtn.addEventListener('click', function() {
 });
 
 function Textdrow(Text) {
+    ctx.save();
+
     ctx.font = '40px Pretendard';
     ctx.fillStyle = "#222";
-    ctx.textBaseline = "top"; 
+    ctx.textBaseline = "top";
     ctx.fillText(Text, textX, textY);
+
+    ctx.restore();
 };
 
 // 이미지 + 텍스트 다시 그리기 함수
@@ -279,7 +283,96 @@ const flieDef = document.querySelector('#def');
 
 flieDef.addEventListener('click', function() {
     saveText = "";
+    textX = 20;
+    textY = 20;
     redraw();
     fileInput.value = "";
     flieText.value = "";
+});
+
+// 텍스트 이동
+
+let isDragging = false;
+let Draggingon = false;
+let offsetX = 0;
+let offsetY = 0;
+let textX = 20;
+let textY = 20;
+let textHeight = 40;
+let textWidth = 0;
+let angle = 0;
+
+const textMove = document.querySelector('#move')
+
+textMove.addEventListener('click', function() {
+    Draggingon = true;
+});
+
+// 마우스가 텍스트 위에 있는지 체크
+function isMouseOnText(e) {
+    const mouseX = e.offsetX;
+    const mouseY = e.offsetY;
+
+    textWidth = ctx.measureText(saveText).width;
+
+    return mouseX >= textX &&
+           mouseX <= textX + textWidth &&
+           mouseY >= textY &&
+           mouseY <= textY + textHeight;
+}
+
+// 마우스 눌렀을 때
+canvasBox.addEventListener("mousedown", (e) => {
+    if (isMouseOnText(e)) {
+        isDragging = true;
+        offsetX = e.offsetX - textX;
+        offsetY = e.offsetY - textY;
+    }
+});
+
+// 마우스 뗄 때
+canvasBox.addEventListener("mouseup", () => {
+    isDragging = false;
+});
+
+// 마우스 이동 시
+canvasBox.addEventListener("mousemove", (e) => {
+    if (isDragging && Draggingon) {
+        textX = e.offsetX - offsetX;
+        textY = e.offsetY - offsetY;
+        redraw(); // 기존 redraw() 그대로 호출
+    }
+});
+
+document.addEventListener("keydown", (e) => {
+    const step = 5; // 이동 거리 (px)
+
+    if(Draggingon == false) return;
+
+    if (e.ctrlKey) {
+        // Ctrl + 방향키 → 회전
+        switch (e.key) {
+            case "ArrowRight":
+                angle += Math.PI / 2; // 시계방향 90도
+                break;
+            case "ArrowUp":
+                textY -= step;
+                break;
+            case "ArrowDown":
+                textY += step;
+                break;
+        }
+    } else {
+        // 방향키만 → 위치 이동
+        switch (e.key) {
+            case "ArrowLeft":
+                textX -= step;
+                break;
+            case "ArrowRight":
+                textX += step;
+                break;
+        }
+    }
+
+    redraw(); // 이동 후 다시 그리기
 });
