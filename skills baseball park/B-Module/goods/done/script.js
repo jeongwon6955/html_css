@@ -211,9 +211,11 @@ fileCall.addEventListener("click", function() {
     fileInput.click();
 });
 
+let file
+
 fileInput.addEventListener("change", function() {
     if (fileInput.files.length > 0) {
-      const file = fileInput.files[0];
+      file = fileInput.files[0];
       Callimg = document.createElement('img');
       Callimg.src = URL.createObjectURL(file);
       Callimg.onload = function() {
@@ -249,18 +251,37 @@ flieTextAdd.addEventListener('click', function() {
     flieTextBox.classList.toggle('show_text_box');
 });
 
+let textSetting = false;
+
 flieTextBtn.addEventListener('click', function() {
     saveText = flieText.value;
-    redraw();
+    textSetting = true;
+    redraw();   
 });
 
-function Textdrow(Text) {
+function Textdraw(Text) {
     ctx.save();
-
     ctx.font = '40px Pretendard';
     ctx.fillStyle = "#222";
-    ctx.textBaseline = "top";
-    ctx.fillText(Text, textX, textY);
+
+    // 텍스트 크기 계산
+    textWidth = ctx.measureText(Text).width;
+    textHeight = 40;
+
+    if (textSetting) {
+        // 생성 시 좌측 상단 기준
+        ctx.textAlign = "left";
+        ctx.textBaseline = "top";
+        ctx.fillText(Text, textX, textY);
+        textSetting = false;
+    } else {
+        // 드래그/회전 시 중앙 기준
+        ctx.translate(textX + textWidth / 2, textY + textHeight / 2);
+        ctx.rotate(angle);
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(Text, 0, 0);
+    }
 
     ctx.restore();
 };
@@ -269,13 +290,9 @@ function Textdrow(Text) {
 function redraw() {
     ctx.clearRect(0, 0, canvasBox.width, canvasBox.height);
 
-    if (Callimg) {
-        ctx.drawImage(Callimg, 0, 0, canvasBox.width, canvasBox.height);
-    }
-    if (saveText) {
-        Textdrow(saveText);
-    }
-};
+    if (Callimg) ctx.drawImage(Callimg, 0, 0, canvasBox.width, canvasBox.height);
+    if (saveText) Textdraw(saveText);
+}
 
 // 원래대로 버튼
 
@@ -313,20 +330,38 @@ function isMouseOnText(e) {
     const mouseX = e.offsetX;
     const mouseY = e.offsetY;
 
-    textWidth = ctx.measureText(saveText).width;
+    // 드래그/회전 시 중앙 기준
+    const cx = textX + textWidth / 2;
+    const cy = textY + textHeight / 2;
 
-    return mouseX >= textX &&
-           mouseX <= textX + textWidth &&
-           mouseY >= textY &&
-           mouseY <= textY + textHeight;
+    const dx = mouseX - cx;
+    const dy = mouseY - cy;
+
+    const cos = Math.cos(-angle);
+    const sin = Math.sin(-angle);
+    const rotatedX = dx * cos - dy * sin;
+    const rotatedY = dx * sin + dy * cos;   
+
+    return rotatedX >= -textWidth / 2 &&
+           rotatedX <= textWidth / 2 &&
+           rotatedY >= -textHeight / 2 &&
+           rotatedY <= textHeight / 2;
 }
 
 // 마우스 눌렀을 때
 canvasBox.addEventListener("mousedown", (e) => {
+    if (!saveText) return;
     if (isMouseOnText(e)) {
         isDragging = true;
-        offsetX = e.offsetX - textX;
-        offsetY = e.offsetY - textY;
+
+        const cx = textX + textWidth / 2;
+        const cy = textY + textHeight / 2;
+        const dx = e.offsetX - cx;
+        const dy = e.offsetY - cy;
+        const cos = Math.cos(-angle);
+        const sin = Math.sin(-angle);
+        offsetX = dx * cos - dy * sin;
+        offsetY = dx * sin + dy * cos;
     }
 });
 
@@ -338,41 +373,54 @@ canvasBox.addEventListener("mouseup", () => {
 // 마우스 이동 시
 canvasBox.addEventListener("mousemove", (e) => {
     if (isDragging && Draggingon) {
-        textX = e.offsetX - offsetX;
-        textY = e.offsetY - offsetY;
-        redraw(); // 기존 redraw() 그대로 호출
+        const cos = Math.cos(angle);
+        const sin = Math.sin(angle);
+
+        // 회전 offset 반영
+        textX = e.offsetX - (offsetX * cos - offsetY * sin);
+        textY = e.offsetY - (offsetX * sin + offsetY * cos);
+
+        redraw();
     }
 });
 
-document.addEventListener("keydown", (e) => {
-    const step = 5; // 이동 거리 (px)
+function rotateText90() {
+    angle += Math.PI / 2; // 시계방향 90도
+    redraw();
+}
 
-    if(Draggingon == false) return;
+// 키보드 이벤트
+document.addEventListener("keydown", (e) => {
+    if (!Draggingon) return;
+    const step = 5;
 
     if (e.ctrlKey) {
-        // Ctrl + 방향키 → 회전
         switch (e.key) {
-            case "ArrowRight":
-                angle += Math.PI / 2; // 시계방향 90도
-                break;
-            case "ArrowUp":
-                textY -= step;
-                break;
-            case "ArrowDown":
-                textY += step;
-                break;
+            case "ArrowRight": rotateText90(); break;
+            case "ArrowUp": textY -= step; redraw(); break;
+            case "ArrowDown": textY += step; redraw(); break;
         }
     } else {
-        // 방향키만 → 위치 이동
         switch (e.key) {
-            case "ArrowLeft":
-                textX -= step;
-                break;
-            case "ArrowRight":
-                textX += step;
-                break;
+            case "ArrowLeft": textX -= step; redraw(); break;
+            case "ArrowRight": textX += step; redraw(); break;
         }
     }
+});
 
-    redraw(); // 이동 후 다시 그리기
+// 다운로드
+
+const filedownload = document.querySelector("#download")
+
+console.log(filedownload)
+
+filedownload.addEventListener('click', function() {
+
+    const imageURL = document.createElement('a')
+
+    imageURL.href = canvasBox.toDataURL('image/png');
+    imageURL.download = file.name;
+    document.body.appendChild(imageURL);
+    imageURL.click();
+    document.body.removeChild(imageURL);
 });
