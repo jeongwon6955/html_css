@@ -1,44 +1,52 @@
 // 메뉴 바로가기 버튼
 
-const btn = document.querySelector('#scroll1');
-const btn1 = document.querySelector('#scroll2');
-const btn2 = document.querySelector('#scroll3');
-const btn3 = document.querySelector('#scroll4');
+const btns = document.querySelectorAll('#scroll1');
+const btns1 = document.querySelectorAll('#scroll2');
+const btns2 = document.querySelectorAll('#scroll3');
+const btns3 = document.querySelectorAll('#scroll4');
 
-btn.addEventListener('click', function() {
-    const target = document.querySelector('.itd')
+btns.forEach(btn => {
+   btn.addEventListener('click', function() {
+       const target = document.querySelector('.itd')
 
-    target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'end'
-    })
+        target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'end'
+        })
+    }) 
 })
 
-btn1.addEventListener('click', function() {
-    const target = document.querySelector('.exp')
+btns1.forEach(btn => {
+   btn.addEventListener('click', function() {
+       const target = document.querySelector('.exp')
 
-    target.scrollIntoView({
-        behavior: 'smooth',
-        black: 'end'
-    })
+        target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'end'
+        })
+    }) 
 })
 
-btn2.addEventListener('click', function() {
-    const target = document.querySelector('.sta')
+btns2.forEach(btn => {
+   btn.addEventListener('click', function() {
+       const target = document.querySelector('.sta')
 
-    target.scrollIntoView({
-        behavior: 'smooth',
-        black: 'end'
-    })
+        target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'end'
+        })
+    }) 
 })
 
-btn3.addEventListener('click', function() {
-    const target = document.querySelector('.rep')
+btns3.forEach(btn => {
+   btn.addEventListener('click', function() {
+       const target = document.querySelector('.rep')
 
-    target.scrollIntoView({
-        behavior: 'smooth',
-        black: 'end'
-    })
+        target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'end'
+        })
+    }) 
 })
 
 const topbtn = document.querySelector('.top-scroll')

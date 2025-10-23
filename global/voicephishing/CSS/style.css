@@ -190,10 +190,10 @@ a {
 }
 
 .slidebar {
-    width: 50px;
+    width: 54px;
     height: 5px;
     border-radius: 20px;
-    background-color: #bdbcbc;
+    background-color: #9a9a9a;
 }
 
 .slides-textbox {
@@ -371,4 +371,69 @@ a {
     100% {
         transform: scale(1);
     }
+}
+
+/* 푸터 영역 */
+.footer {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.f_container {
+    width: 1200px;
+    height: 120px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+.f_img {
+    width: 30%;
+    height: 110px;
+    display: flex;
+}
+
+.f_img p {
+    align-content: center;
+    font-size: 25px;
+}
+
+.f_img img {
+    width: 180px;
+    height: 110px;
+    margin-left: -30px;
+}
+
+.f_center {
+    align-items: center;
+    color: #8f8f8f;
+    font-size: 14px;
+    display: flex;
+}
+
+.f_center p {
+    margin-inline: 10px;
+    cursor: pointer;
+}
+
+.f_center p:hover {
+    color: black;
+}
+
+.f_right {
+    text-align: right;
+    font-size: 30px;
+    align-content: end;
+}
+
+.f_right i {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.f_adr {
+    color: #8f8f8f;
+    font-size: 14px;
+    text-align: right;
 }
